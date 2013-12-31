@@ -7,20 +7,25 @@ laravel-4.1-quick-start-cn
 
 ---
 
-- [本项目加入的辅助元素](#本项目加入的辅助元素)
-- [Demo 短链生成](#Demo-短链生成)
-- [barryvdh/laravel-debugbar](#barryvdhlaravel-debugbar)
+- [本项目加入的辅助元素](#difference)
+- [Demo](#Demo)
+- [学习资料推荐](#)
+- [相关开源项目推荐](#)
 
 ---
 
 
-
+<a name="difference"></a>
 ## 本项目加入的辅助元素
 
-- 请点击 [different.md](mdDoc/different.md) 查看。
-- **新增 migrate 数据库迁移的 MySQL 注释支持** 详细内容请参阅这篇博文：[让 Laravel 4.1 的“数据库迁移”支持 MySQL 字段注释](http://my.oschina.net/5say/blog/186017)
+- 约定了自定义函数库引入的位置。
+- 约定了视图别名定义的位置。
+- 对项目的静态资源路径做统一管理。
+- 增加 migrate 数据库迁移的 MySQL 注释支持，详细内容请参阅这篇博文：[让 Laravel 4.1 的“数据库迁移”支持 MySQL 字段注释](http://my.oschina.net/5say/blog/186017)。
+- 引入 laravel-debugbar 调试工具栏。
+- 更多详细信息请点击 [different.md](mdDoc/different.md) 查看。
 
-## Demo 短链生成
+## Demo
 
 - 短链生成[点击查看说明](mdDoc/demoUrlShortened.md)
- - 源于 **袁维隆** 的 *[Laravel4快速上手教程](http://beta.zexeo.com/course/3) 19-22 讲* 稍做改动，建议配合视频学习。
+  - 源于 **袁维隆** 的 *[Laravel4快速上手教程](http://beta.zexeo.com/course/3) 19-22 讲* 稍做改动，建议配合视频学习。
