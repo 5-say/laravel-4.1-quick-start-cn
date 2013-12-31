@@ -3,14 +3,14 @@ laravel-4.1-quick-start-cn
 
 这是一个 laravel-4.1 的完整包（包含了 vendor 目录），常用的源码已经补充中文注释，方便大家快速的开始学习和体验 laravel 框架。
 
-**注意：** 此项目在原始的 laravel 基础上加入了一些辅助元素，本质上并没有对框架核心做任何变动。如果你需要原始的“完整包”，这里向大家推荐 **痛在远方** 为大家打包的项目 [github.com/maliang/complete-laravel4](https://github.com/maliang/complete-laravel4)。
+**注意：** 此项目在原始的 laravel 基础上加入了一些辅助元素，本质上并没有对框架核心做任何变动。如果你需要原始的“完整包”，这里推荐 **痛在远方** 为大家打包的项目 [github.com/maliang/complete-laravel4](https://github.com/maliang/complete-laravel4)。
 
 ---
 
 - [本项目加入的辅助元素](#difference)
-- [Demo](#Demo)
-- [学习资料推荐](#)
-- [相关开源项目推荐](#)
+- [Demo](#demo)
+- [学习资料推荐](#learn)
+- [相关开源项目推荐](#open)
 
 ---
 
@@ -29,3 +29,22 @@ laravel-4.1-quick-start-cn
 
 - 短链生成[点击查看说明](mdDoc/demoUrlShortened.md)
   - 源于 **袁维隆** 的 *[Laravel4快速上手教程](http://beta.zexeo.com/course/3) 19-22 讲* 稍做改动，建议配合视频学习。
+
+<a name="learn"></a>
+## 学习资料推荐
+
+- **CSDN 上的 Laravel 专栏** [http://blog.csdn.net/column/details/laravel.html](http://blog.csdn.net/column/details/laravel.html)
+- **Laravel 4 入门三讲**
+  - [laravel 在启动的时候到底做了什么？](http://my.oschina.net/5say/blog/179199)
+  - [laravel 的路由是如何完成注册的？](http://my.oschina.net/5say/blog/181104)
+  - [laravel 在注册路由后还执行了哪些操作？](http://my.oschina.net/5say/blog/181178)
+- **则修 上的 Laravel4快速上手教程** [http://beta.zexeo.com/course/3](http://beta.zexeo.com/course/3) *（中文视频，入门推荐，请注册后直接在线购买教程。* **注意：充值是免费的，请不要误解** *）* —— 感谢视频作者： **袁维隆**
+- **大量外语视频收录** [百度网盘共享](http://pan.baidu.com/share/home?uk=2348859066#category/type=0) *（建议有一定外语基础的朋友跟进，视频质量很高）* —— 感谢资源分享者： **千万分之一**
+
+<a name="open"></a>
+## 相关开源项目推荐
+
+- **中文 Laravel4 教程** [github.com/maliang/LikeLaravel](https://github.com/maliang/LikeLaravel) *(是对官方文档的一份很好的补充，入门推荐)* —— 主要维护者： **痛在远方**
+- **Ampou** [github.com/Ampou/App](https://github.com/Ampou/App) *(基于 Laravel 4.0 的 sns 系统)* 已部署 [ampou.com](http://ampou.com/) —— 主要维护者： **fyiorb**
+- **My-favorite-tools** [github.com/5-say/My-favorite-tools](https://github.com/5-say/My-favorite-tools) *收集一些可用于 laravel 的优秀的开源包，并尽可能的对其使用文档进行翻译* —— 主要维护者： **成武**
+
