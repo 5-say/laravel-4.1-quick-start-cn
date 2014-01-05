@@ -56,5 +56,4 @@ laravel-4.1-quick-start-cn
 
 - **中文 Laravel4 教程** [github.com/maliang/LikeLaravel](https://github.com/maliang/LikeLaravel) *(是对官方文档的一份很好的补充，入门推荐)* —— 主要维护者： **痛在远方**
 - **Ampou** [github.com/Ampou/App](https://github.com/Ampou/App) *(基于 Laravel 4.0 的 sns 系统)* 已部署 [ampou.com](http://ampou.com/) —— 主要维护者： **fyiorb**
-- **My-favorite-tools** [github.com/5-say/My-favorite-tools](https://github.com/5-say/My-favorite-tools) *(收集一些可用于 laravel 的优秀的开源包，并尽可能的对其使用文档进行翻译)* —— 主要维护者： **成武**
 
