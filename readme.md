@@ -38,7 +38,7 @@ laravel-4.1-quick-start-cn
   - 作为一个被大量优秀框架所使用的依赖管理工具，有必要对其进行更加深入的了解，这有助于你更好的使用你的框架，而不必为一个 `update` 命令造成的怪异 bug 而困扰。
   - 这里为大家提供了官方文档的翻译，建议至少看完前3章的内容，如此便会有不小的收获。-- [Composer 中文文档](https://github.com/5-say/composer-doc-cn/blob/master/README.md)
 - **PHP 依赖注入**
-  - 如果你对 Laravel 的 IOC 云里雾里，建议阅读这篇文章，它足够详细并且简单易懂。-- [PHP 依赖注入](#http://blog.sina.com.cn/s/blog_7141dace0100lopb.html)
+  - 如果你对 Laravel 的 IOC 云里雾里，建议阅读这篇文章，它足够详细并且简单易懂。-- [PHP 依赖注入](http://blog.sina.com.cn/s/blog_7141dace0100lopb.html)
 
 <a name="learn"></a>
 ## 学习资料推荐
