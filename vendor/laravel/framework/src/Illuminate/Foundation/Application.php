@@ -26,7 +26,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	 *
 	 * @var string
 	 */
-	const VERSION = '4.1.11';
+	const VERSION = '4.1.13';
 
 	/**
 	 * Indicates if the application has "booted".
@@ -324,7 +324,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	 * @param  string  $provider
 	 * @return \Illuminate\Support\ServiceProvider
 	 */
-	protected function resolveProviderClass($provider)
+	public function resolveProviderClass($provider)
 	{
 		return new $provider($this);
 	}

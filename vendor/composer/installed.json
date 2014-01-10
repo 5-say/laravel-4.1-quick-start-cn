@@ -52,12 +52,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/EventDispatcher.git",
-            "reference": "6a86e7e768e64c85f9d2b76fa895e47d8b3162b3"
+            "reference": "a37a9430e2eafb6a66de240ac13f91b45b4c3d37"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/6a86e7e768e64c85f9d2b76fa895e47d8b3162b3",
-            "reference": "6a86e7e768e64c85f9d2b76fa895e47d8b3162b3",
+            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/a37a9430e2eafb6a66de240ac13f91b45b4c3d37",
+            "reference": "a37a9430e2eafb6a66de240ac13f91b45b4c3d37",
             "shasum": ""
         },
         "require": {
@@ -72,7 +72,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2013-12-28 21:40:48",
+        "time": "2014-01-07 13:29:57",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -302,119 +302,18 @@
         ]
     },
     {
-        "name": "patchwork/utf8",
-        "version": "v1.1.16",
-        "version_normalized": "1.1.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-            "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/bc719e850b57791c1024d06f9fe7d474348e7ba6",
-            "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6",
-            "shasum": ""
-        },
-        "require": {
-            "lib-pcre": "*",
-            "php": ">=5.3.0"
-        },
-        "suggest": {
-            "ext-mbstring": "Use Mbstring for best performance",
-            "lib-iconv": "Use iconv for best performance",
-            "lib-icu": "Use Intl for best performance"
-        },
-        "time": "2013-12-07 12:20:20",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Patchwork": "class/",
-                "Normalizer": "class/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "(Apache-2.0 or GPL-2.0)"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com",
-                "role": "Developer"
-            }
-        ],
-        "description": "Extensive, portable and performant handling of UTF-8 and grapheme clusters for PHP",
-        "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
-        "keywords": [
-            "i18n",
-            "unicode",
-            "utf-8",
-            "utf8"
-        ]
-    },
-    {
-        "name": "nesbot/carbon",
-        "version": "1.7.0",
-        "version_normalized": "1.7.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/briannesbitt/Carbon.git",
-            "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/03ede52a1f360441b5826cb8a798e0d0a919731f",
-            "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*"
-        },
-        "time": "2013-12-05 04:13:29",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Carbon": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Brian Nesbitt",
-                "email": "brian@nesbot.com",
-                "homepage": "http://nesbot.com"
-            }
-        ],
-        "description": "A simple API extension for DateTime.",
-        "homepage": "https://github.com/briannesbitt/Carbon",
-        "keywords": [
-            "date",
-            "datetime",
-            "time"
-        ]
-    },
-    {
         "name": "monolog/monolog",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "e92cb54c24e990c505be1b4af82e962d55d092df"
+            "reference": "b17c7a41d16fc23f9e2b8bfb637dd0f1e620fe17"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e92cb54c24e990c505be1b4af82e962d55d092df",
-            "reference": "e92cb54c24e990c505be1b4af82e962d55d092df",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b17c7a41d16fc23f9e2b8bfb637dd0f1e620fe17",
+            "reference": "b17c7a41d16fc23f9e2b8bfb637dd0f1e620fe17",
             "shasum": ""
         },
         "require": {
@@ -438,7 +337,7 @@
             "raven/raven": "Allow sending log messages to a Sentry server",
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
         },
-        "time": "2013-12-26 13:24:17",
+        "time": "2014-01-09 22:27:36",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -749,17 +648,17 @@
     },
     {
         "name": "maximebf/debugbar",
-        "version": "1.8",
-        "version_normalized": "1.8.0.0",
+        "version": "1.9",
+        "version_normalized": "1.9.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/maximebf/php-debugbar.git",
-            "reference": "f1dd126ec13ad912a9c3a1b9b4d27e16da182d38"
+            "reference": "ec6a857a308373fb61449e74a5aaf06af5f2ce87"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/f1dd126ec13ad912a9c3a1b9b4d27e16da182d38",
-            "reference": "f1dd126ec13ad912a9c3a1b9b4d27e16da182d38",
+            "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/ec6a857a308373fb61449e74a5aaf06af5f2ce87",
+            "reference": "ec6a857a308373fb61449e74a5aaf06af5f2ce87",
             "shasum": ""
         },
         "require": {
@@ -774,7 +673,7 @@
             "monolog/monolog": "Log using Monolog",
             "predis/predis": "Redis storage"
         },
-        "time": "2013-12-19 22:23:19",
+        "time": "2014-01-07 20:49:48",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -800,18 +699,119 @@
         ]
     },
     {
-        "name": "barryvdh/laravel-debugbar",
-        "version": "v1.1.2",
-        "version_normalized": "1.1.2.0",
+        "name": "patchwork/utf8",
+        "version": "v1.1.17",
+        "version_normalized": "1.1.17.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/barryvdh/laravel-debugbar.git",
-            "reference": "84b83ac6836868e2f1d1f44d7479d5057727b939"
+            "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
+            "reference": "1396fedf134f71d479236fce0833dc4c88079391"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/84b83ac6836868e2f1d1f44d7479d5057727b939",
-            "reference": "84b83ac6836868e2f1d1f44d7479d5057727b939",
+            "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/1396fedf134f71d479236fce0833dc4c88079391",
+            "reference": "1396fedf134f71d479236fce0833dc4c88079391",
+            "shasum": ""
+        },
+        "require": {
+            "lib-pcre": ">=7.9",
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "ext-iconv": "Use iconv for best performance",
+            "ext-intl": "Use Intl for best performance",
+            "ext-mbstring": "Use Mbstring for best performance"
+        },
+        "time": "2014-01-02 10:19:36",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Patchwork": "class/",
+                "Normalizer": "class/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "(Apache-2.0 or GPL-2.0)"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Extensive, portable and performant handling of UTF-8 and grapheme clusters for PHP",
+        "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
+        "keywords": [
+            "i18n",
+            "unicode",
+            "utf-8",
+            "utf8"
+        ]
+    },
+    {
+        "name": "nesbot/carbon",
+        "version": "1.8.0",
+        "version_normalized": "1.8.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/briannesbitt/Carbon.git",
+            "reference": "21c4cb4301969c7d85aee8a62eefdfa881413af0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/21c4cb4301969c7d85aee8a62eefdfa881413af0",
+            "reference": "21c4cb4301969c7d85aee8a62eefdfa881413af0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2014-01-07 05:10:44",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Carbon": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Nesbitt",
+                "email": "brian@nesbot.com",
+                "homepage": "http://nesbot.com"
+            }
+        ],
+        "description": "A simple API extension for DateTime.",
+        "homepage": "https://github.com/briannesbitt/Carbon",
+        "keywords": [
+            "date",
+            "datetime",
+            "time"
+        ]
+    },
+    {
+        "name": "barryvdh/laravel-debugbar",
+        "version": "v1.1.4",
+        "version_normalized": "1.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barryvdh/laravel-debugbar.git",
+            "reference": "22f1751267e7a2714f0df74fe207623cc928c68b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/22f1751267e7a2714f0df74fe207623cc928c68b",
+            "reference": "22f1751267e7a2714f0df74fe207623cc928c68b",
             "shasum": ""
         },
         "require": {
@@ -819,7 +819,7 @@
             "maximebf/debugbar": "~1.8",
             "php": ">=5.3.0"
         },
-        "time": "2013-12-24 10:04:48",
+        "time": "2014-01-05 20:29:11",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -854,12 +854,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/BrowserKit.git",
-            "reference": "0248b2dfc9cd6b259555d232eedfb1283eb496c3"
+            "reference": "c6b3cd51651f445908a11f3f81f965a157daef38"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/0248b2dfc9cd6b259555d232eedfb1283eb496c3",
-            "reference": "0248b2dfc9cd6b259555d232eedfb1283eb496c3",
+            "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/c6b3cd51651f445908a11f3f81f965a157daef38",
+            "reference": "c6b3cd51651f445908a11f3f81f965a157daef38",
             "shasum": ""
         },
         "require": {
@@ -873,7 +873,7 @@
         "suggest": {
             "symfony/process": ""
         },
-        "time": "2013-12-28 21:39:51",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -911,12 +911,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Debug.git",
-            "reference": "c63a4ad13ce20bf15ec037367467020b90f07002"
+            "reference": "7bd04476b53d676189196ba4c526ccde4302a8de"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Debug/zipball/c63a4ad13ce20bf15ec037367467020b90f07002",
-            "reference": "c63a4ad13ce20bf15ec037367467020b90f07002",
+            "url": "https://api.github.com/repos/symfony/Debug/zipball/7bd04476b53d676189196ba4c526ccde4302a8de",
+            "reference": "7bd04476b53d676189196ba4c526ccde4302a8de",
             "shasum": ""
         },
         "require": {
@@ -930,7 +930,7 @@
             "symfony/http-foundation": "",
             "symfony/http-kernel": ""
         },
-        "time": "2013-12-28 21:39:51",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -967,12 +967,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/nrk/predis.git",
-            "reference": "d2debfd43eb8a5201204bb70275a0ef83b3d11ff"
+            "reference": "9d0201ed9ef4fae09ed251897260941af230bed3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nrk/predis/zipball/d2debfd43eb8a5201204bb70275a0ef83b3d11ff",
-            "reference": "d2debfd43eb8a5201204bb70275a0ef83b3d11ff",
+            "url": "https://api.github.com/repos/nrk/predis/zipball/9d0201ed9ef4fae09ed251897260941af230bed3",
+            "reference": "9d0201ed9ef4fae09ed251897260941af230bed3",
             "shasum": ""
         },
         "require": {
@@ -982,7 +982,7 @@
             "ext-curl": "Allows access to Webdis when paired with phpiredis",
             "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
         },
-        "time": "2013-12-22 16:51:18",
+        "time": "2014-01-08 16:38:22",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1017,12 +1017,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/DomCrawler.git",
-            "reference": "ea4e3be8d036627e1bc67129173f3f9c780776a0"
+            "reference": "fa7d0ca404202d4330075ac90c6c22c546753d64"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/ea4e3be8d036627e1bc67129173f3f9c780776a0",
-            "reference": "ea4e3be8d036627e1bc67129173f3f9c780776a0",
+            "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/fa7d0ca404202d4330075ac90c6c22c546753d64",
+            "reference": "fa7d0ca404202d4330075ac90c6c22c546753d64",
             "shasum": ""
         },
         "require": {
@@ -1034,7 +1034,7 @@
         "suggest": {
             "symfony/css-selector": ""
         },
-        "time": "2013-12-29 14:43:38",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1072,18 +1072,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Process.git",
-            "reference": "5223ec2578e7ecd0192915434a6e33a689e329d6"
+            "reference": "4f196b9d307d9e1a3d4372f1735c301c03d476c5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Process/zipball/5223ec2578e7ecd0192915434a6e33a689e329d6",
-            "reference": "5223ec2578e7ecd0192915434a6e33a689e329d6",
+            "url": "https://api.github.com/repos/symfony/Process/zipball/4f196b9d307d9e1a3d4372f1735c301c03d476c5",
+            "reference": "4f196b9d307d9e1a3d4372f1735c301c03d476c5",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2013-12-29 14:43:38",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1121,18 +1121,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/CssSelector.git",
-            "reference": "78ce1f8f7af616d477bd696e2c46f52918896189"
+            "reference": "251273e7700b93a24012d4113ee5681a9000de5a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/CssSelector/zipball/78ce1f8f7af616d477bd696e2c46f52918896189",
-            "reference": "78ce1f8f7af616d477bd696e2c46f52918896189",
+            "url": "https://api.github.com/repos/symfony/CssSelector/zipball/251273e7700b93a24012d4113ee5681a9000de5a",
+            "reference": "251273e7700b93a24012d4113ee5681a9000de5a",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2013-12-31 13:43:26",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1174,12 +1174,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Translation.git",
-            "reference": "7f76dffd7eaf2c9a3a8f47649404c71440d18c8b"
+            "reference": "d08c27077115e4bd3030a812e4083daa49254ca9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Translation/zipball/7f76dffd7eaf2c9a3a8f47649404c71440d18c8b",
-            "reference": "7f76dffd7eaf2c9a3a8f47649404c71440d18c8b",
+            "url": "https://api.github.com/repos/symfony/Translation/zipball/d08c27077115e4bd3030a812e4083daa49254ca9",
+            "reference": "d08c27077115e4bd3030a812e4083daa49254ca9",
             "shasum": ""
         },
         "require": {
@@ -1193,7 +1193,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2013-12-31 13:43:26",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1231,18 +1231,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Finder.git",
-            "reference": "f4485dfeb71d3ce5886288d4b1b5ef3aa53d4085"
+            "reference": "b6735d1fc16da13c4c7dddfe78366a4a098cf011"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Finder/zipball/f4485dfeb71d3ce5886288d4b1b5ef3aa53d4085",
-            "reference": "f4485dfeb71d3ce5886288d4b1b5ef3aa53d4085",
+            "url": "https://api.github.com/repos/symfony/Finder/zipball/b6735d1fc16da13c4c7dddfe78366a4a098cf011",
+            "reference": "b6735d1fc16da13c4c7dddfe78366a4a098cf011",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2013-12-31 13:43:26",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1280,18 +1280,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Filesystem.git",
-            "reference": "548000429823d067206bdfe73d4eb850c585e810"
+            "reference": "e81f1b30eb9748c3f8e0de3a92ea210845cff0a9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Filesystem/zipball/548000429823d067206bdfe73d4eb850c585e810",
-            "reference": "548000429823d067206bdfe73d4eb850c585e810",
+            "url": "https://api.github.com/repos/symfony/Filesystem/zipball/e81f1b30eb9748c3f8e0de3a92ea210845cff0a9",
+            "reference": "e81f1b30eb9748c3f8e0de3a92ea210845cff0a9",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2013-12-31 13:43:37",
+        "time": "2014-01-07 13:29:57",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1329,18 +1329,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpFoundation.git",
-            "reference": "979b5cf2bdf1f5785a8faa30e2cea97044b31c4d"
+            "reference": "25b49c494ea6aed2cfd8448ae3f8437d01e731eb"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/979b5cf2bdf1f5785a8faa30e2cea97044b31c4d",
-            "reference": "979b5cf2bdf1f5785a8faa30e2cea97044b31c4d",
+            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/25b49c494ea6aed2cfd8448ae3f8437d01e731eb",
+            "reference": "25b49c494ea6aed2cfd8448ae3f8437d01e731eb",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2013-12-31 13:43:26",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1381,12 +1381,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpKernel.git",
-            "reference": "9e44e6a6e0f702111e0d00164c3ecec4b08e7cba"
+            "reference": "eb1ed60a4a066238106721f67f664fd6382a99ea"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/9e44e6a6e0f702111e0d00164c3ecec4b08e7cba",
-            "reference": "9e44e6a6e0f702111e0d00164c3ecec4b08e7cba",
+            "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/eb1ed60a4a066238106721f67f664fd6382a99ea",
+            "reference": "eb1ed60a4a066238106721f67f664fd6382a99ea",
             "shasum": ""
         },
         "require": {
@@ -1416,7 +1416,7 @@
             "symfony/dependency-injection": "",
             "symfony/finder": ""
         },
-        "time": "2013-12-31 13:43:26",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1454,12 +1454,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Routing.git",
-            "reference": "6f1fed82c94e74620f7c11744f35c3886c58c59d"
+            "reference": "e4ef317134f5628b5f0d3b0ac96d30ba1c8146cc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Routing/zipball/6f1fed82c94e74620f7c11744f35c3886c58c59d",
-            "reference": "6f1fed82c94e74620f7c11744f35c3886c58c59d",
+            "url": "https://api.github.com/repos/symfony/Routing/zipball/e4ef317134f5628b5f0d3b0ac96d30ba1c8146cc",
+            "reference": "e4ef317134f5628b5f0d3b0ac96d30ba1c8146cc",
             "shasum": ""
         },
         "require": {
@@ -1478,7 +1478,7 @@
             "symfony/expression-language": "For using expression matching",
             "symfony/yaml": "For using the YAML loader"
         },
-        "time": "2013-12-31 13:43:26",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1522,12 +1522,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Console.git",
-            "reference": "4534a0033d379d9d5a6031ead6a31c9813b9e03b"
+            "reference": "86e13d5b06146fbe81006570ad26cb7cbeafba15"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Console/zipball/4534a0033d379d9d5a6031ead6a31c9813b9e03b",
-            "reference": "4534a0033d379d9d5a6031ead6a31c9813b9e03b",
+            "url": "https://api.github.com/repos/symfony/Console/zipball/86e13d5b06146fbe81006570ad26cb7cbeafba15",
+            "reference": "86e13d5b06146fbe81006570ad26cb7cbeafba15",
             "shasum": ""
         },
         "require": {
@@ -1539,7 +1539,7 @@
         "suggest": {
             "symfony/event-dispatcher": ""
         },
-        "time": "2013-12-31 13:43:26",
+        "time": "2014-01-07 13:28:54",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1576,12 +1576,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "dc538c57b320d25adee41d2b074ca17dda603852"
+            "reference": "f43c8b69f2e3b55541e64131dce105b17d5e444b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/dc538c57b320d25adee41d2b074ca17dda603852",
-            "reference": "dc538c57b320d25adee41d2b074ca17dda603852",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/f43c8b69f2e3b55541e64131dce105b17d5e444b",
+            "reference": "f43c8b69f2e3b55541e64131dce105b17d5e444b",
             "shasum": ""
         },
         "require": {
@@ -1649,7 +1649,7 @@
         "suggest": {
             "doctrine/dbal": "Allow renaming columns and dropping SQLite columns."
         },
-        "time": "2013-12-31 05:31:28",
+        "time": "2014-01-10 04:08:12",
         "type": "library",
         "extra": {
             "branch-alias": {

@@ -286,6 +286,24 @@ class Environment {
 	}
 
 	/**
+	 * Register multiple view composers via an array.
+	 *
+	 * @param array  $composers
+	 * @return array
+	 */
+	public function composers(array $composers)
+	{
+		$registered = array();
+
+		foreach ($composers as $callback => $views)
+		{
+			$registered += $this->composer($views, $callback);
+		}
+
+		return $registered;
+	}
+
+	/**
 	 * Register a view composer event.
 	 *
 	 * @param  array|string  $views
@@ -624,6 +642,18 @@ class Environment {
 	public function addNamespace($namespace, $hints)
 	{
 		$this->finder->addNamespace($namespace, $hints);
+	}
+
+	/**
+	 * Prepend a new namespace to the loader.
+	 *
+	 * @param  string  $namespace
+	 * @param  string|array  $hints
+	 * @return void
+	 */
+	public function prependNamespace($namespace, $hints)
+	{
+		$this->finder->prependNamespace($namespace, $hints);
 	}
 
 	/**

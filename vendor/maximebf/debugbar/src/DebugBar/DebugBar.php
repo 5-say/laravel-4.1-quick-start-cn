@@ -243,12 +243,19 @@ class DebugBar implements ArrayAccess
      * @param integer $maxHeaderLength
      * @return array
      */
-    public function getDataAsHeaders($headerName = 'phpdebugbar', $maxHeaderLength = 4096)
+    public function getDataAsHeaders($headerName = 'phpdebugbar', $maxHeaderLength = 4096, $maxTotalHeaderLength = 250000)
     {
         $data = rawurlencode(json_encode(array(
             'id' => $this->getCurrentRequestId(),
             'data' => $this->getData()
         )));
+        
+        if (strlen($data) > $maxTotalHeaderLength){
+            $data = rawurlencode(json_encode(array(
+                'error' => 'Maximum header size exceeded'
+            )));
+        }
+        
         $chunks = array();
 
         while (strlen($data) > $maxHeaderLength) {
@@ -416,12 +423,14 @@ class DebugBar implements ArrayAccess
     /**
      * Returns a JavascriptRenderer for this instance
      * 
+     * @param stri $baseUrl
+     * @param string $basePathng
      * @return JavascriptRenderer
      */
-    public function getJavascriptRenderer()
+    public function getJavascriptRenderer($baseUrl = null, $basePath = null)
     {
         if ($this->jsRenderer === null) {
-            $this->jsRenderer = new JavascriptRenderer($this);
+            $this->jsRenderer = new JavascriptRenderer($this, $baseUrl, $basePath);
         }
         return $this->jsRenderer;
     }

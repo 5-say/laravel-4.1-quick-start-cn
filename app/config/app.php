@@ -69,7 +69,7 @@ return array(
 // 32位加密密钥，
 // 在首次执行安装命令 composer install 时自动生成
 // 可以通过 php artisan key:generate 命令重新生成
-    'key' => 'YourSecretKey!!!',
+    'key' => 'zrZJowIKViVEto0UUcfG2QBvlVksot3D',
 
     /*
     |--------------------------------------------------------------------------
