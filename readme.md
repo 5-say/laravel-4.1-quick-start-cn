@@ -58,4 +58,4 @@ laravel-4.1-quick-start-cn
 - **Ampou** [github.com/Ampou/App](https://github.com/Ampou/App) *(基于 Laravel 4.0 的 sns 系统)* 已部署 [ampou.com](http://ampou.com/) —— 主要维护者： **fyiorb**
 - **Laravel Cheat Sheet** [github.com/JesseObrien/laravel-cheatsheet](https://github.com/JesseObrien/laravel-cheatsheet) （Laravel 速查表）已部署 [cheats.jesse-obrien.ca](http://cheats.jesse-obrien.ca/)
 - **基础语言包** [caouecs/Laravel4-lang](https://github.com/caouecs/Laravel4-lang) 含中文。
-- **laravel-local-website** [5-say/laravel-local-website](https://github.com/5-say/laravel-local-website) *本地化 laravel 官方网站 文档 API（方便网络异常时进行文档查阅）*
+- **基于 laravel 的本地文档项目** [5-say/laravel-local-website](https://github.com/5-say/laravel-local-website) *本地化 laravel 文档 / API（包含中文文档）、Composer文档、laravel-4.1 速查笔记...*
