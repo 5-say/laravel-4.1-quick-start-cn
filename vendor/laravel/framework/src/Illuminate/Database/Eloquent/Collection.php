@@ -194,7 +194,7 @@ class Collection extends BaseCollection {
 		return new static(array_values($dictionary));
 	}
 
-	/*
+	/**
 	 * Get a dictionary keyed by primary keys.
 	 *
 	 * @param  \Illuminate\Support\Collection  $collection
@@ -210,6 +210,16 @@ class Collection extends BaseCollection {
 		}
 
 		return $dictionary;
+	}
+
+	/**
+	 * Get a base Support collection instance from this collection.
+	 *
+	 * @return \Illuminate\Support\Collection
+	 */
+	public function toBase()
+	{
+		return new BaseCollection($this->items);
 	}
 
 }

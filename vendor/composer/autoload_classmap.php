@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Barryvdh\\Debugbar\\Console\\ClearCommand' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/Console/ClearCommand.php',
     'Barryvdh\\Debugbar\\Console\\PublishCommand' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/Console/PublishCommand.php',
     'Barryvdh\\Debugbar\\DataCollector\\ConfigCollector' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/DataCollector/ConfigCollector.php',
     'Barryvdh\\Debugbar\\DataCollector\\FilesCollector' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/DataCollector/FilesCollector.php',
@@ -19,6 +20,7 @@ return array(
     'Barryvdh\\Debugbar\\LaravelDebugbar' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/LaravelDebugBar.php',
     'Barryvdh\\Debugbar\\Middleware' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/Middleware.php',
     'Barryvdh\\Debugbar\\ServiceProvider' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/ServiceProvider.php',
+    'Barryvdh\\Debugbar\\Storage\\FilesystemStorage' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/Storage/FilesystemStorage.php',
     'Barryvdh\\Debugbar\\SymfonyHttpDriver' => $vendorDir . '/barryvdh/laravel-debugbar/src/Barryvdh/Debugbar/SymfonyHttpDriver.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
@@ -134,6 +136,9 @@ return array(
     'Illuminate\\Cache\\TaggedCache' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/TaggedCache.php',
     'Illuminate\\Cache\\WinCacheStore' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/WinCacheStore.php',
     'Illuminate\\Cache\\XCacheStore' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/XCacheStore.php',
+    'Illuminate\\Config\\EnvironmentVariables' => $vendorDir . '/laravel/framework/src/Illuminate/Config/EnvironmentVariables.php',
+    'Illuminate\\Config\\EnvironmentVariablesLoaderInterface' => $vendorDir . '/laravel/framework/src/Illuminate/Config/EnvironmentVariablesLoaderInterface.php',
+    'Illuminate\\Config\\FileEnvironmentVariablesLoader' => $vendorDir . '/laravel/framework/src/Illuminate/Config/FileEnvironmentVariablesLoader.php',
     'Illuminate\\Config\\FileLoader' => $vendorDir . '/laravel/framework/src/Illuminate/Config/FileLoader.php',
     'Illuminate\\Config\\LoaderInterface' => $vendorDir . '/laravel/framework/src/Illuminate/Config/LoaderInterface.php',
     'Illuminate\\Config\\Repository' => $vendorDir . '/laravel/framework/src/Illuminate/Config/Repository.php',
@@ -250,6 +255,7 @@ return array(
     'Illuminate\\Foundation\\Console\\DownCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php',
     'Illuminate\\Foundation\\Console\\EnvironmentCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php',
     'Illuminate\\Foundation\\Console\\KeyGenerateCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php',
+    'Illuminate\\Foundation\\Console\\MigratePublishCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/MigratePublishCommand.php',
     'Illuminate\\Foundation\\Console\\OptimizeCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php',
     'Illuminate\\Foundation\\Console\\RoutesCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/RoutesCommand.php',
     'Illuminate\\Foundation\\Console\\ServeCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php',
@@ -258,6 +264,7 @@ return array(
     'Illuminate\\Foundation\\Console\\UpCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php',
     'Illuminate\\Foundation\\Console\\ViewPublishCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/ViewPublishCommand.php',
     'Illuminate\\Foundation\\EnvironmentDetector' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/EnvironmentDetector.php',
+    'Illuminate\\Foundation\\MigrationPublisher' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/MigrationPublisher.php',
     'Illuminate\\Foundation\\ProviderRepository' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php',
     'Illuminate\\Foundation\\Providers\\ArtisanServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php',
     'Illuminate\\Foundation\\Providers\\CommandCreatorServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Providers/CommandCreatorServiceProvider.php',

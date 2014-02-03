@@ -17,7 +17,9 @@ div.phpdebugbar-closed {
 }
 
 div.phpdebugbar * {
-	box-sizing: content-box;
+    
+    -moz-box-sizing: content-box;
+         box-sizing: content-box;
 }
 
 /* -------------------------------------- */
@@ -96,7 +98,7 @@ a.phpdebugbar-close-btn {
   height: 16px;
 }
 
-a.phpdebugbar-open-btn,{
+a.phpdebugbar-open-btn {
   background: url(icons.png) no-repeat -14px 8px;
   width: 16px;
   height: 16px;

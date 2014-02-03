@@ -30,7 +30,7 @@ class OpenHandler
 
     /**
      * Handles the current request
-     * 
+     *
      * @param array $request Request data
      */
     public function handle($request = null, $echo = true, $sendHeader = true)
@@ -48,9 +48,11 @@ class OpenHandler
         }
 
         if ($sendHeader) {
-            header('Content-Type: application/json');
+            $this->debugBar->getHttpDriver()->setHeaders(array(
+                    'Content-Type'=> 'application/json'
+                ));
         }
-        
+
         $response = json_encode(call_user_func(array($this, $op), $request));
         if ($echo) {
             echo $response;
@@ -74,7 +76,7 @@ class OpenHandler
         }
 
         $filters = array();
-        foreach (array('utime', 'datetime', 'ip', 'uri') as $key) {
+        foreach (array('utime', 'datetime', 'ip', 'uri', 'method') as $key) {
             if (isset($request[$key])) {
                 $filters[$key] = $request[$key];
             }
