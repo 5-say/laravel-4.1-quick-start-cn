@@ -22,7 +22,8 @@ laravel-4.1-quick-start-cn
 - 约定了自定义函数库引入的位置。
 - 约定了视图别名定义的位置。
 - 对项目的静态资源路径做统一管理。
-- 增加 migrate 数据库迁移的 MySQL 注释支持，详细内容请参阅这篇博文：[让 Laravel 4.1 的“数据库迁移”支持 MySQL 字段注释](http://my.oschina.net/5say/blog/186017)。
+- 增加 migrate 数据库迁移的 MySQL 注释支持。
+  - 详细内容请参阅这篇博文：[让 Laravel 4.1 的“数据库迁移”支持 MySQL 字段注释](http://my.oschina.net/5say/blog/186017)。
 - 引入 laravel-debugbar 调试工具栏。
 - 更多详细信息请点击 [different.md](mdDoc/different.md) 查看。
 
@@ -43,12 +44,15 @@ laravel-4.1-quick-start-cn
 <a name="learn"></a>
 ## 学习资料推荐
 
-- **则修 上的 Laravel4快速上手教程** [http://beta.zexeo.com/course/3](http://beta.zexeo.com/course/3) *（中文视频，入门推荐，请注册后直接在线购买教程。* **注意：充值是免费的，请不要误解** *）* —— 感谢视频作者： **袁维隆**
+- **则修 上的 Laravel4快速上手教程** [http://beta.zexeo.com/course/3](http://beta.zexeo.com/course/3)
+  - 中文视频，入门推荐，请注册后直接在线购买教程。
+  - **注意：充值是免费的，请不要误解**  —— 感谢视频作者： **袁维隆**
 - **Laravel 4 入门三讲**
   - [laravel 在启动的时候到底做了什么？](http://my.oschina.net/5say/blog/179199)
   - [laravel 的路由是如何完成注册的？](http://my.oschina.net/5say/blog/181104)
   - [laravel 在注册路由后还执行了哪些操作？](http://my.oschina.net/5say/blog/181178)
-- **大量外语视频收录** [百度网盘共享](http://pan.baidu.com/share/home?uk=2348859066#category/type=0) *（建议有一定外语基础的朋友跟进，视频质量很高）* —— 感谢资源分享者： **千万分之一**
+- **大量外语视频收录** [百度网盘共享](http://pan.baidu.com/share/home?uk=2348859066#category/type=0)
+  - 建议有一定外语基础的朋友跟进，视频质量很高 —— 感谢资源分享者： **千万分之一**
 - **CSDN 上的 Laravel 专栏** [http://blog.csdn.net/column/details/laravel.html](http://blog.csdn.net/column/details/laravel.html)
 
 <a name="open"></a>
