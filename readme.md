@@ -65,7 +65,8 @@ laravel-4.1-quick-start-cn
   - 已部署 [ampou.com](http://ampou.com/)
 - **Laravel Cheat Sheet（Laravel 速查表）** [github.com/JesseObrien/laravel-cheatsheet](https://github.com/JesseObrien/laravel-cheatsheet)
   - 已部署 [cheats.jesse-obrien.ca](http://cheats.jesse-obrien.ca/)
-- **基础语言包** [caouecs/Laravel4-lang](https://github.com/caouecs/Laravel4-lang) 含中文。
+- **Laravel4-lang** [caouecs/Laravel4-lang](https://github.com/caouecs/Laravel4-lang)
+  - 基础语言包，含中文。
 - **基于 laravel 的本地文档项目** [5-say/laravel-local-website](https://github.com/5-say/laravel-local-website)
   - 本地化 laravel 文档 / API（方便查阅与更新）
   - 整合 golaravel.com 中文文档，源自**王赛**先生的开源项目 [golaravel/laravel4.1docs](https://github.com/golaravel/laravel4.1docs) 和 [golaravel/laravel4docs](https://github.com/golaravel/laravel4docs)。
