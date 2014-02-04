@@ -38,7 +38,7 @@ laravel-4.1-quick-start-cn
   - 作为一个被大量优秀框架所使用的依赖管理工具，有必要对其进行更加深入的了解，这有助于你更好的使用你的框架，而不必为一个 `update` 命令造成的怪异 bug 而困扰。
   - 这里为大家提供了官方文档的翻译，建议至少看完前3章的内容，如此便会有不小的收获。-- [Composer 中文文档](https://github.com/5-say/composer-doc-cn/blob/master/README.md)
 - **PHP 依赖注入**
-  - 如果你对 Laravel 的 IOC 云里雾里，建议阅读这篇文章，它足够详细并且简单易懂。-- [PHP 依赖注入](http://blog.sina.com.cn/s/blog_7141dace0100lopb.html)
+  - 如果你对 Laravel 的 IOC 云里雾里，建议阅读这篇文章，它足够详细并且简单易懂。-- [PHP 依赖注入](https://github.com/5-say/laravel-4.1-note/blob/master/04.知识拓展/PHP/PHP-依赖注入.md)
 
 <a name="learn"></a>
 ## 学习资料推荐
@@ -54,8 +54,16 @@ laravel-4.1-quick-start-cn
 <a name="open"></a>
 ## 相关开源项目推荐
 
-- **中文 Laravel4 教程** [github.com/maliang/LikeLaravel](https://github.com/maliang/LikeLaravel) *(是对官方文档的一份很好的补充，入门推荐)* —— 主要维护者： **痛在远方**
-- **Ampou** [github.com/Ampou/App](https://github.com/Ampou/App) *(基于 Laravel 4.0 的 sns 系统)* 已部署 [ampou.com](http://ampou.com/) —— 主要维护者： **fyiorb**
-- **Laravel Cheat Sheet** [github.com/JesseObrien/laravel-cheatsheet](https://github.com/JesseObrien/laravel-cheatsheet) （Laravel 速查表）已部署 [cheats.jesse-obrien.ca](http://cheats.jesse-obrien.ca/)
+- **中文 Laravel4 教程** [github.com/maliang/LikeLaravel](https://github.com/maliang/LikeLaravel)
+  - 是对官方文档的一份很好的补充，入门推荐 —— 主要维护者： **痛在远方**
+- **Ampou** [github.com/Ampou/App](https://github.com/Ampou/App)
+  - 基于 Laravel 4.0 的 sns 系统 —— 主要维护者： **fyiorb**
+  - 已部署 [ampou.com](http://ampou.com/)
+- **Laravel Cheat Sheet（Laravel 速查表）** [github.com/JesseObrien/laravel-cheatsheet](https://github.com/JesseObrien/laravel-cheatsheet)
+  - 已部署 [cheats.jesse-obrien.ca](http://cheats.jesse-obrien.ca/)
 - **基础语言包** [caouecs/Laravel4-lang](https://github.com/caouecs/Laravel4-lang) 含中文。
-- **基于 laravel 的本地文档项目** [5-say/laravel-local-website](https://github.com/5-say/laravel-local-website) *本地化 laravel 文档 / API（包含中文文档）、Composer 中文文档、laravel-4.1 速查笔记...*
+- **基于 laravel 的本地文档项目** [5-say/laravel-local-website](https://github.com/5-say/laravel-local-website)
+  - 本地化 laravel 文档 / API（方便查阅与更新）
+  - 整合 golaravel.com 中文文档，源自**王赛**先生的开源项目 [golaravel/laravel4.1docs](https://github.com/golaravel/laravel4.1docs) 和 [golaravel/laravel4docs](https://github.com/golaravel/laravel4docs)。
+  - 整合 Composer 中文文档 [5-say/composer-doc-cn](https://github.com/5-say/composer-doc-cn)
+  - 整合 laravel-4.1 速查笔记 [5-say/laravel-4.1-note](https://github.com/5-say/laravel-4.1-note)
