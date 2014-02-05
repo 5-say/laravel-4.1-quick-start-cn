@@ -72,3 +72,5 @@ laravel-4.1-quick-start-cn
   - 整合 golaravel.com 中文文档，源自**王赛**先生的开源项目 [golaravel/laravel4.1docs](https://github.com/golaravel/laravel4.1docs) 和 [golaravel/laravel4docs](https://github.com/golaravel/laravel4docs)。
   - 整合 Composer 中文文档 [5-say/composer-doc-cn](https://github.com/5-say/composer-doc-cn)
   - 整合 laravel-4.1 速查笔记 [5-say/laravel-4.1-note](https://github.com/5-say/laravel-4.1-note)
+  - 整合 PHP-PSR-代码标准中文版 [hfcorriez/fig-standards](https://github.com/hfcorriez/fig-standards)
+  - ...
