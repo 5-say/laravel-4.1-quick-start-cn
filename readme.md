@@ -74,3 +74,6 @@ laravel-4.1-quick-start-cn
   - 整合 laravel-4.1 速查笔记 [5-say/laravel-4.1-note](https://github.com/5-say/laravel-4.1-note)
   - 整合 PHP-PSR-代码标准中文版 [hfcorriez/fig-standards](https://github.com/hfcorriez/fig-standards)
   - ...
+- **基于 laravel 4.1 的简易博客实例** [5-say/laravel-4.1-simple-blog](https://github.com/5-say/laravel-4.1-simple-blog)
+
+
