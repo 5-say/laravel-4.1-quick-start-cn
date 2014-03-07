@@ -26,6 +26,7 @@ laravel-4.1-quick-start-cn
   - 详细内容请参阅这篇博文：[让 Laravel 4.1 的“数据库迁移”支持 MySQL 字段注释](http://my.oschina.net/5say/blog/186017)。
 - 引入 laravel-debugbar 调试工具栏。
 - 更多详细信息请点击 [different.md](mdDoc/different.md) 查看。
+- 2014-03-07 引入 [VendorCleaner](https://github.com/5-say/VendorCleaner) 来改善 vendor 目录臃肿的问题。
 
 ## Demo
 
