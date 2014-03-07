@@ -27,7 +27,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	 *
 	 * @var string
 	 */
-	const VERSION = '4.1.20';
+	const VERSION = '4.1.23';
 
 	/**
 	 * Indicates if the application has "booted".
@@ -977,6 +977,17 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	public function setDeferredServices(array $services)
 	{
 		$this->deferredServices = $services;
+	}
+
+	/**
+	 * Determine if the given service is a deferred service.
+	 *
+	 * @param  string  $service
+	 * @return bool
+	 */
+	public function isDeferredService($service)
+	{
+		return isset($this->deferredServices[$service]);
 	}
 
 	/**

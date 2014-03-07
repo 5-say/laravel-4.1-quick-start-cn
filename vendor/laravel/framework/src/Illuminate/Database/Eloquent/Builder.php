@@ -593,7 +593,7 @@ class Builder {
 	{
 		if ($column instanceof Closure)
 		{
-			$query = $this->model->newQuery();
+			$query = $this->model->newQuery(false);
 
 			call_user_func($column, $query);
 
@@ -601,7 +601,7 @@ class Builder {
 		}
 		else
 		{
-			$this->query->where($column, $operator, $value, $boolean);
+			call_user_func_array(array($this->query, 'where'), func_get_args());
 		}
 
 		return $this;

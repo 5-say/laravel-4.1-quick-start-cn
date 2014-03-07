@@ -1,10 +1,7 @@
 Version 0.9.5-dev
 -----------------
 
-* Add `NodeTraverser::removeVisitor()` method, which removes a visitor from the node traverser. This also modifies the
-  corresponding `NodeTraverserInterface`.
-
-* Fix alias resolution in `NameResolver`: Class names are now correctly handled as case-insensitive.
+Nothing yet.
 
 Version 0.9.4 (25.08.2013)
 --------------------------

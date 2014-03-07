@@ -581,7 +581,7 @@ class Validator implements MessageProviderInterface {
 
 		foreach ($attributes as $key)
 		{
-			if (isset($this->data[$key]) || isset($this->files[$key]))
+			if (array_get($this->data, $key) || array_get($this->files, $key))
 			{
 				$count++;
 			}
@@ -1647,7 +1647,14 @@ class Validator implements MessageProviderInterface {
 	 */
 	protected function replaceBefore($message, $attribute, $rule, $parameters)
 	{
-		return str_replace(':date', $parameters[0], $message);
+		if ( ! ($date = strtotime($parameters[0])))
+		{
+			return str_replace(':date', $this->getAttribute($parameters[0]), $message);
+		}
+		else
+		{
+			return str_replace(':date', $parameters[0], $message);
+		}
 	}
 
 	/**
@@ -1661,7 +1668,14 @@ class Validator implements MessageProviderInterface {
 	 */
 	protected function replaceAfter($message, $attribute, $rule, $parameters)
 	{
-		return str_replace(':date', $parameters[0], $message);
+		if ( ! ($date = strtotime($parameters[0])))
+		{
+			return str_replace(':date', $this->getAttribute($parameters[0]), $message);
+		}
+		else
+		{
+			return str_replace(':date', $parameters[0], $message);
+		}
 	}
 
 	/**
@@ -2115,24 +2129,25 @@ class Validator implements MessageProviderInterface {
 		}
 		elseif (is_string($callback))
 		{
-			return $this->callClassBasedReplacer($message, $attribute, $rule, $parameters);
+			return $this->callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters);
 		}
 	}
 
 	/**
 	 * Call a class based validator message replacer.
 	 *
+	 * @param  string  $callback
 	 * @param  string  $message
 	 * @param  string  $attribute
 	 * @param  string  $rule
 	 * @param  array   $parameters
 	 * @return string
 	 */
-	protected function callClassBasedReplacer($message, $attribute, $rule, $parameters)
+	protected function callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters)
 	{
 		list($class, $method) = explode('@', $callback);
 
-		return call_user_func_array(array($this->container->make($class), $method), func_get_args());
+		return call_user_func_array(array($this->container->make($class), $method), array_slice(func_get_args(), 1));
 	}
 
 	/**

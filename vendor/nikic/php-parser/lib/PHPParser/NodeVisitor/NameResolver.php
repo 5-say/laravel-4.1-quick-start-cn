@@ -22,8 +22,7 @@ class PHPParser_NodeVisitor_NameResolver extends PHPParser_NodeVisitorAbstract
             $this->namespace = $node->name;
             $this->aliases   = array();
         } elseif ($node instanceof PHPParser_Node_Stmt_UseUse) {
-            $aliasName = strtolower($node->alias);
-            if (isset($this->aliases[$aliasName])) {
+            if (isset($this->aliases[$node->alias])) {
                 throw new PHPParser_Error(
                     sprintf(
                         'Cannot use "%s" as "%s" because the name is already in use',
@@ -33,7 +32,7 @@ class PHPParser_NodeVisitor_NameResolver extends PHPParser_NodeVisitorAbstract
                 );
             }
 
-            $this->aliases[$aliasName] = $node->name;
+            $this->aliases[$node->alias] = $node->name;
         } elseif ($node instanceof PHPParser_Node_Stmt_Class) {
             if (null !== $node->extends) {
                 $node->extends = $this->resolveClassName($node->extends);
@@ -98,9 +97,8 @@ class PHPParser_NodeVisitor_NameResolver extends PHPParser_NodeVisitorAbstract
         }
 
         // resolve aliases (for non-relative names)
-        $aliasName = strtolower($name->getFirst());
-        if (!$name->isRelative() && isset($this->aliases[$aliasName])) {
-            $name->setFirst($this->aliases[$aliasName]);
+        if (!$name->isRelative() && isset($this->aliases[$name->getFirst()])) {
+            $name->setFirst($this->aliases[$name->getFirst()]);
         // if no alias exists prepend current namespace
         } elseif (null !== $this->namespace) {
             $name->prepend($this->namespace);
@@ -117,9 +115,8 @@ class PHPParser_NodeVisitor_NameResolver extends PHPParser_NodeVisitorAbstract
         }
 
         // resolve aliases for qualified names
-        $aliasName = strtolower($name->getFirst());
-        if ($name->isQualified() && isset($this->aliases[$aliasName])) {
-            $name->setFirst($this->aliases[$aliasName]);
+        if ($name->isQualified() && isset($this->aliases[$name->getFirst()])) {
+            $name->setFirst($this->aliases[$name->getFirst()]);
         // prepend namespace for relative names
         } elseif (null !== $this->namespace) {
             $name->prepend($this->namespace);

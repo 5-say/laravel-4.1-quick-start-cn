@@ -1,6 +1,5 @@
 <?php namespace Illuminate\Http;
 
-use Illuminate\Session\Store as SessionStore;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
@@ -28,6 +27,16 @@ class Request extends SymfonyRequest {
 	public function instance()
 	{
 		return $this;
+	}
+
+	/**
+	 * Get the request method.
+	 *
+	 * @return string
+	 */
+	public function method()
+	{
+		return $this->getMethod();
 	}
 
 	/**
@@ -95,7 +104,7 @@ class Request extends SymfonyRequest {
 	{
 		$segments = explode('/', trim($this->getPathInfo(), '/'));
 
-		$segments = array_filter($segments, function($v) { return $v != ''; });
+		$segments = array_values(array_filter($segments));
 
 		return array_get($segments, $index - 1, $default);
 	}
@@ -122,7 +131,7 @@ class Request extends SymfonyRequest {
 	{
 		foreach (func_get_args() as $pattern)
 		{
-			if (str_is($pattern, $this->path()))
+			if (str_is($pattern, urldecode($this->path())))
 			{
 				return true;
 			}

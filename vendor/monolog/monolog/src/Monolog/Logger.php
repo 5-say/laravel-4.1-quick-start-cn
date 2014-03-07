@@ -107,15 +107,12 @@ class Logger implements LoggerInterface
      */
     protected static $timezone;
 
-    /**
-     * @var string
-     */
     protected $name;
 
     /**
      * The handler stack
      *
-     * @var HandlerInterface[]
+     * @var array of Monolog\Handler\HandlerInterface
      */
     protected $handlers;
 
@@ -124,14 +121,14 @@ class Logger implements LoggerInterface
      *
      * To process records of a single handler instead, add the processor on that specific handler
      *
-     * @var callable[]
+     * @var array of callables
      */
     protected $processors;
 
     /**
-     * @param string             $name       The logging channel
-     * @param HandlerInterface[] $handlers   Optional stack of handlers, the first one in the array is called first, etc.
-     * @param callable[]         $processors Optional array of processors
+     * @param string $name       The logging channel
+     * @param array  $handlers   Optional stack of handlers, the first one in the array is called first, etc.
+     * @param array  $processors Optional array of processors
      */
     public function __construct($name, array $handlers = array(), array $processors = array())
     {
@@ -344,7 +341,7 @@ class Logger implements LoggerInterface
      */
     public function addEmergency($message, array $context = array())
     {
-        return $this->addRecord(static::EMERGENCY, $message, $context);
+      return $this->addRecord(static::EMERGENCY, $message, $context);
     }
 
     /**

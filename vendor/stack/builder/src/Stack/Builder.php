@@ -15,10 +15,6 @@ class Builder
 
     public function unshift(/*$kernelClass, $args...*/)
     {
-        if (func_num_args() === 0) {
-            throw new \InvalidArgumentException("Missing argument(s) when calling unshift");
-        }
-
         $spec = func_get_args();
         $this->specs->unshift($spec);
 
@@ -27,10 +23,6 @@ class Builder
 
     public function push(/*$kernelClass, $args...*/)
     {
-        if (func_num_args() === 0) {
-            throw new \InvalidArgumentException("Missing argument(s) when calling push");
-        }
-
         $spec = func_get_args();
         $this->specs->push($spec);
 

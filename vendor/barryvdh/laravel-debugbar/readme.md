@@ -1,15 +1,17 @@
 ## Laravel 4 Debugbar
 
-This is a package to integrate PHP Debug Bar (https://github.com/maximebf/php-debugbar) with Laravel.
+This is a package to integrate [PHP Debug Bar](http://phpdebugbar.com/) with Laravel.
 It includes a ServiceProvider to register the debugbar and attach it to the output. You can publish assets and configure it through Laravel.
 It bootstraps some Collectors to work with Laravel and implements a couple custom DataCollectors, specific for Laravel.
-It is configured to display Redirects and Ajax Requests. (Shown in a dropdown)
+It is configured to display Redirects and (jQuery) Ajax Requests. (Shown in a dropdown)
+Read [the documentation](http://phpdebugbar.com/docs/) for more configuration options.
 
-![Screenshot](http://i.imgur.com/GVc6C9g.png)
+![Screenshot](http://i.imgur.com/oJP3Ljp.jpg)
 
 Note: Use the DebugBar only in development. It can slow the application down (because it has to gather data). So when experiencing slowness, try disabling some of the collectors.
 
 This package includes some custom collectors:
+ - QueryCollector: Show all queries, including binding + timing
  - RouteCollector: Show information about the current Route.
  - ViewCollector: Show the currently loaded views. (Optionally: display the shared data)
  - EventsCollector: Show all events
@@ -21,8 +23,6 @@ This package includes some custom collectors:
 
 Bootstraps the following collectors for Laravel:
  - LogCollector: Show all Log messages
- - PdoCollector: Show Database Queries + Bindings
- - TwigCollector: For extra Twig info with barryvdh/laravel-twigbridge
  - SwiftMailCollector and SwiftLogCollector for Mail
 
 And the default collectors:

@@ -72,7 +72,7 @@ return array(
     | have failed. You may change them to any database / table you wish.
     |
     */
-
+// 失败的队列任务将被存储至，下面指定的数据库表中
     'failed' => array(
 
         'database' => 'mysql', 'table' => 'failed_jobs',

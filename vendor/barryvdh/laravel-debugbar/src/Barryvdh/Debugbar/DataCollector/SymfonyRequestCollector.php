@@ -124,9 +124,7 @@ class SymfonyRequestCollector extends DataCollector implements DataCollectorInte
         }
 
         foreach($data as $key => $var){
-            if(empty($data[$key])){
-                $data[$key] = '-';
-            }else{
+            if(!is_string($data[$key])){
                 $data[$key] = $this->formatVar($var);
             }
         }

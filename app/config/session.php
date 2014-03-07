@@ -139,7 +139,7 @@ return array(
     | the cookie from being sent to you if it can not be done securely.
     |
     */
-
+// 是否仅在 HTTPS 链接中存储客户端 Cookies
     'secure' => false,
 
 );
