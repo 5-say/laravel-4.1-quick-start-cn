@@ -12,6 +12,7 @@ laravel-4.1-quick-start-cn
 - [重要知识点](#important-points)
 - [学习资料推荐](#learn)
 - [相关开源项目推荐](#open)
+- [相关站点推荐](#related-sites)
 
 ---
 
@@ -77,5 +78,16 @@ laravel-4.1-quick-start-cn
   - ...
 - **基于 laravel 4.1 的简易博客实例** [5-say/laravel-4.1-simple-blog](https://github.com/5-say/laravel-4.1-simple-blog)
 - **vendor 目录清理程序** [5-say/VendorCleaner](https://github.com/5-say/VendorCleaner)
+
+<a name="related-sites"></a>
+## 相关站点推荐
+
+- [packagist.org](https://packagist.org/)
+  - composer 资源包 
+- [packalyst.com](http://packalyst.com/)
+  - 针对性的搜集了 laravel 相关的资源包
+
+
+
 
 
