@@ -12,6 +12,7 @@ laravel-4.1-quick-start-cn
 - [重要知识点](#important-points)
 - [学习资料推荐](#learn)
 - [相关开源项目推荐](#open)
+- [相关站点推荐](#related-sites)
 
 ---
 
@@ -41,6 +42,8 @@ laravel-4.1-quick-start-cn
   - 这里为大家提供了官方文档的翻译，建议至少看完前3章的内容，如此便会有不小的收获。-- [Composer 中文文档](https://github.com/5-say/composer-doc-cn/blob/master/README.md)
 - **PHP 依赖注入**
   - 如果你对 Laravel 的 IOC 云里雾里，建议阅读这篇文章，它足够详细并且简单易懂。-- [PHP 依赖注入](https://github.com/5-say/laravel-4.1-note/blob/master/04.知识拓展/PHP/PHP-依赖注入.md)
+- **用 Laravel+Grunt+Bower 管理你的应用**
+  - 非常值得一看，这篇文章将会帮助你从过去繁复的开发中解脱出来，借助开源的力量，更好的组织和维护你的应用。-- [grunt-bower-and-laravel](http://yansu.org/2014/03/10/grunt-bower-and-laravel.html)
 
 <a name="learn"></a>
 ## 学习资料推荐
@@ -77,5 +80,16 @@ laravel-4.1-quick-start-cn
   - ...
 - **基于 laravel 4.1 的简易博客实例** [5-say/laravel-4.1-simple-blog](https://github.com/5-say/laravel-4.1-simple-blog)
 - **vendor 目录清理程序** [5-say/VendorCleaner](https://github.com/5-say/VendorCleaner)
+
+<a name="related-sites"></a>
+## 相关站点推荐
+
+- [packagist.org](https://packagist.org/)
+  - composer 资源包 
+- [packalyst.com](http://packalyst.com/)
+  - 针对性的搜集了 laravel 相关的资源包
+
+
+
 
 
