@@ -31,6 +31,11 @@ $env = $app->detectEnvironment(array(
 
 ));
 // $env = 'production';
+// 另一种处理方法，部署时在 Apache or Nginx 设置 ‘APP_ENV’
+// $env = $app->detectEnvironment(function()
+// {
+//     return getenv('APP_ENV') ?: 'local';
+// });
 
 /*
 |--------------------------------------------------------------------------
