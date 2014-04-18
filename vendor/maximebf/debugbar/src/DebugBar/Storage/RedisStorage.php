@@ -30,25 +30,16 @@ class RedisStorage implements StorageInterface
         $this->hash = $hash;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function save($id, $data)
     {
         $this->redis->hset($this->hash, $id, serialize($data));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function get($id)
     {
         return unserialize($this->redis->hget($this->hash, $id));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function find(array $filters = array(), $max = 20, $offset = 0)
     {
         $results = array();
@@ -69,16 +60,13 @@ class RedisStorage implements StorageInterface
     protected function filter($meta, $filters)
     {
         foreach ($filters as $key => $value) {
-            if (!isset($meta[$key]) || fnmatch ($value, $meta[$key]) === false) {
+            if (!isset($meta[$key]) || fnmatch($value, $meta[$key]) === false) {
                 return false;
             }
         }
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function clear()
     {
         $this->redis->del($this->hash);

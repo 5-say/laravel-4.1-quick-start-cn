@@ -2,8 +2,7 @@
 namespace Barryvdh\Debugbar\Console;
 use Illuminate\Foundation\AssetPublisher;
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
+
 /**
  * Publish the Debugbar assets to the public directory
  *
@@ -53,8 +52,8 @@ class PublishCommand extends Command {
     public function fire()
     {
 
-        $package = 'barryvdh/laravel-debugbar';
-        if ( ! is_null($path = $this->getPath()))
+        $package = 'maximebf/php-debugbar';
+        if ( ! is_null($path = $this->getDebugBarPath()))
         {
             $this->assets->publish($package, $path);
             $this->info('Assets published for package: '.$package);
@@ -63,35 +62,19 @@ class PublishCommand extends Command {
         {
             $this->error('Could not find path for: '.$package);
         }
+        $this->assets->publish('barryvdh/laravel-debugbar', $this->getPackagePublicPath());
+        $this->info('Assets published for package: barryvdh/laravel-debugbar');
 
     }
 
-    protected function getPath(){
+    protected function getDebugBarPath(){
         $reflector = new \ReflectionClass('DebugBar\DebugBar');
         return dirname($reflector->getFileName()) . DIRECTORY_SEPARATOR . 'Resources';
     }
 
-
-    /**
-     * Get the console command arguments.
-     *
-     * @return array
-     */
-    protected function getArguments()
-    {
-        return array();
+    protected function getPackagePublicPath(){
+        return __DIR__.'/../../../../public';
     }
-
-    /**
-     * Get the console command options.
-     *
-     * @return array
-     */
-    protected function getOptions()
-    {
-        return array();
-    }
-
 
 
 }

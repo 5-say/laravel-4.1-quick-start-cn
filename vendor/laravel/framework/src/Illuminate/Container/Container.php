@@ -151,7 +151,7 @@ class Container implements ArrayAccess {
 	 */
 	protected function getClosure($abstract, $concrete)
 	{
-		return function($c, $parameters) use ($abstract, $concrete)
+		return function($c, $parameters = array()) use ($abstract, $concrete)
 		{
 			$method = ($abstract == $concrete) ? 'build' : 'make';
 
@@ -614,6 +614,7 @@ class Container implements ArrayAccess {
 	 * @param  array  $dependencies
 	 * @param  array  $parameters
 	 * @param  array
+	 * @return array
 	 */
 	protected function keyParametersByArgument(array $dependencies, array $parameters)
 	{

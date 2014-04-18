@@ -60,9 +60,8 @@ class MessagesCollector extends AbstractLogger implements DataCollectorInterface
      * @param mixed $message
      * @param string $label
      */
-    public function addMessage($message, $label = 'info')
+    public function addMessage($message, $label = 'info', $isString = true)
     {
-        $isString = true;
         if (!is_string($message)) {
             $message = $this->getDataFormatter()->formatVar($message);
             $isString = false;
@@ -85,9 +84,6 @@ class MessagesCollector extends AbstractLogger implements DataCollectorInterface
         $this->aggregates[] = $messages;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getMessages()
     {
         $messages = $this->messages;
@@ -110,9 +106,6 @@ class MessagesCollector extends AbstractLogger implements DataCollectorInterface
         return $messages;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function log($level, $message, array $context = array())
     {
         $this->addMessage($message, $level);
@@ -126,9 +119,6 @@ class MessagesCollector extends AbstractLogger implements DataCollectorInterface
         $this->messages = array();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function collect()
     {
         $messages = $this->getMessages();
@@ -138,17 +128,11 @@ class MessagesCollector extends AbstractLogger implements DataCollectorInterface
         );
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getWidgets()
     {
         $name = $this->getName();

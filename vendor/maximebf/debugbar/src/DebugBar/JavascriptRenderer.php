@@ -11,6 +11,7 @@
 namespace DebugBar;
 
 use DebugBar\DataCollector\Renderable;
+use DebugBar\DataCollector\AssetProvider;
 
 /**
  * Renders the debug bar using the client side javascript implementation
@@ -25,21 +26,33 @@ class JavascriptRenderer
 
     const REPLACEABLE_TAG = "{--DEBUGBAR_OB_START_REPLACE_ME--}";
 
+    const RELATIVE_PATH = 'path';
+
+    const RELATIVE_URL = 'url';
+
     protected $debugBar;
 
     protected $baseUrl;
 
     protected $basePath;
 
-    protected $cssVendors = array('vendor/font-awesome/css/font-awesome.min.css');
+    protected $cssVendors = array(
+        'vendor/font-awesome/css/font-awesome.min.css',
+        'vendor/highlightjs/styles/github.css'
+    );
 
-    protected $jsVendors = array('vendor/jquery/jquery.min.js');
+    protected $jsVendors = array(
+        'vendor/jquery/dist/jquery.min.js',
+        'vendor/highlightjs/highlight.pack.js'
+    );
 
     protected $includeVendors = true;
 
     protected $cssFiles = array('debugbar.css', 'widgets.css', 'openhandler.css');
 
     protected $jsFiles = array('debugbar.js', 'widgets.js', 'openhandler.js');
+
+    protected $additionalAssets = array();
 
     protected $javascriptClass = 'PhpDebugBar.DebugBar';
 
@@ -93,9 +106,15 @@ class JavascriptRenderer
      *  - include_vendors
      *  - javascript_class
      *  - variable_name
+     *  - initialization
+     *  - enable_jquery_noconflict
      *  - controls
      *  - disable_controls
      *  - ignore_collectors
+     *  - ajax_handler_classname
+     *  - ajax_handler_bind_to_jquery
+     *  - open_handler_classname
+     *  - open_handler_url
      *
      * @param array $options [description]
      */
@@ -384,21 +403,6 @@ class JavascriptRenderer
     }
 
     /**
-     * Returns needed asset files relative to the base path
-     *
-     * @param string $type 'css', 'js' or null for both
-     * @return array
-     */
-    public function getAssets($type = null)
-    {
-        list($cssFiles, $jsFiles) = $this->getAssetFiles();
-        return $this->filterAssetArray(array(
-            $this->makeUriRelativeTo($cssFiles, $this->basePath),
-            $this->makeUriRelativeTo($jsFiles, $this->basePath)
-        ), $type);
-    }
-
-    /**
      * Sets the class name of the ajax handler
      *
      * Set to false to disable
@@ -485,12 +489,32 @@ class JavascriptRenderer
     }
 
     /**
+     * Add assets to render in the head
+     *
+     * @param array $cssFiles An array of filenames
+     * @param array $jsFiles  An array of filenames
+     * @param string $basePath Base path of those files
+     * @param string $baseUrl  Base url of those files
+     */
+    public function addAssets($cssFiles, $jsFiles, $basePath = null, $baseUrl = null)
+    {
+        $this->additionalAssets[] = array(
+            'base_path' => $basePath,
+            'base_url' => $baseUrl,
+            'css' => (array) $cssFiles,
+            'js' => (array) $jsFiles
+        );
+        return $this;
+    }
+
+    /**
      * Returns the list of asset files
      *
      * @param string $type Only return css or js files
+     * @param string $relativeTo The type of path to which filenames must be relative (path, url or null)
      * @return array
      */
-    protected function getAssetFiles($type = null)
+    public function getAssets($type = null, $relativeTo = self::RELATIVE_PATH)
     {
         $cssFiles = $this->cssFiles;
         $jsFiles = $this->jsFiles;
@@ -504,7 +528,77 @@ class JavascriptRenderer
             }
         }
 
+        if ($relativeTo) {
+            $root = $this->getRelativeRoot($relativeTo, $this->basePath, $this->baseUrl);
+            $cssFiles = $this->makeUriRelativeTo($cssFiles, $root);
+            $jsFiles = $this->makeUriRelativeTo($jsFiles, $root);
+        }
+
+        $additionalAssets = $this->additionalAssets;
+        // finds assets provided by collectors
+        foreach ($this->debugBar->getCollectors() as $collector) {
+            if (($collector instanceof AssetProvider) && !in_array($collector->getName(), $this->ignoredCollectors)) {
+                $additionalAssets[] = $collector->getAssets();
+            }
+        }
+
+        foreach ($additionalAssets as $assets) {
+            $basePath = isset($assets['base_path']) ? $assets['base_path'] : null;
+            $baseUrl = isset($assets['base_url']) ? $assets['base_url'] : null;
+            $root = $this->getRelativeRoot($relativeTo,
+                $this->makeUriRelativeTo($basePath, $this->basePath),
+                $this->makeUriRelativeTo($baseUrl, $this->baseUrl));
+            $cssFiles = array_merge($cssFiles, $this->makeUriRelativeTo((array) $assets['css'], $root));
+            $jsFiles = array_merge($jsFiles, $this->makeUriRelativeTo((array) $assets['js'], $root));
+        }
+
         return $this->filterAssetArray(array($cssFiles, $jsFiles), $type);
+    }
+
+    /**
+     * Returns the correct base according to the type
+     *
+     * @param string $relativeTo
+     * @param string $basePath
+     * @param string $baseUrl
+     * @return string
+     */
+    protected function getRelativeRoot($relativeTo, $basePath, $baseUrl)
+    {
+        if ($relativeTo === self::RELATIVE_PATH) {
+            return $basePath;
+        }
+        if ($relativeTo === self::RELATIVE_URL) {
+            return $baseUrl;
+        }
+        return null;
+    }
+
+    /**
+     * Makes a URI relative to another
+     *
+     * @param string|array $uri
+     * @param string $root
+     * @return string
+     */
+    protected function makeUriRelativeTo($uri, $root)
+    {
+        if (!$root) {
+            return $uri;
+        }
+
+        if (is_array($uri)) {
+            $uris = array();
+            foreach ($uri as $u) {
+                $uris[] = $this->makeUriRelativeTo($u, $root);
+            }
+            return $uris;
+        }
+
+        if (substr($uri, 0, 1) === '/' || preg_match('/^([a-z]+:\/\/|[a-zA-Z]:\/)/', $uri)) {
+            return $uri;
+        }
+        return rtrim($root, '/') . "/$uri";
     }
 
     /**
@@ -535,7 +629,7 @@ class JavascriptRenderer
      */
     public function getAsseticCollection($type = null)
     {
-        list($cssFiles, $jsFiles) = $this->getAssetFiles();
+        list($cssFiles, $jsFiles) = $this->getAssets();
         return $this->filterAssetArray(array(
             $this->createAsseticCollection($cssFiles),
             $this->createAsseticCollection($jsFiles)
@@ -554,7 +648,7 @@ class JavascriptRenderer
     {
         $assets = array();
         foreach ($files as $file) {
-            $assets[] = new \Assetic\Asset\FileAsset($this->makeUriRelativeTo($file, $this->basePath));
+            $assets[] = new \Assetic\Asset\FileAsset($file);
         }
         return new \Assetic\Asset\AssetCollection($assets);
     }
@@ -607,43 +701,18 @@ class JavascriptRenderer
      */
     public function renderHead()
     {
-        list($cssFiles, $jsFiles) = $this->getAssetFiles();
+        list($cssFiles, $jsFiles) = $this->getAssets(null, self::RELATIVE_URL);
         $html = '';
 
         foreach ($cssFiles as $file) {
-            $html .= sprintf('<link rel="stylesheet" type="text/css" href="%s">' . "\n",
-                $this->makeUriRelativeTo($file, $this->baseUrl));
+            $html .= sprintf('<link rel="stylesheet" type="text/css" href="%s">' . "\n", $file);
         }
 
         foreach ($jsFiles as $file) {
-            $html .= sprintf('<script type="text/javascript" src="%s"></script>' . "\n",
-                $this->makeUriRelativeTo($file, $this->baseUrl));
+            $html .= sprintf('<script type="text/javascript" src="%s"></script>' . "\n", $file);
         }
 
         return $html;
-    }
-
-    /**
-     * Makes a URI relative to another
-     *
-     * @param string|array $uri
-     * @param string $root
-     * @return string
-     */
-    protected function makeUriRelativeTo($uri, $root)
-    {
-        if (is_array($uri)) {
-            $uris = array();
-            foreach ($uri as $u) {
-                $uris[] = $this->makeUriRelativeTo($u, $root);
-            }
-            return $uris;
-        }
-
-        if (substr($uri, 0, 1) === '/' || preg_match('/^([a-z]+:\/\/|[a-zA-Z]:\/)/', $uri)) {
-            return $uri;
-        }
-        return rtrim($root, '/') . "/$uri";
     }
 
     /**
@@ -653,8 +722,9 @@ class JavascriptRenderer
      * @param boolean $initialize Whether to render the de bug bar initialization code
      * @return string Return "{--DEBUGBAR_OB_START_REPLACE_ME--}" or return an empty string if $here == false
      */
-    public function renderOnShutdown($here = true, $initialize = true, $renderStackedData = true) {
-        register_shutdown_function(array($this, "replaceTagInBuffer"), $here, $initialize, $renderStackedData);
+    public function renderOnShutdown($here = true, $initialize = true, $renderStackedData = true, $head = false)
+    {
+        register_shutdown_function(array($this, "replaceTagInBuffer"), $here, $initialize, $renderStackedData, $head);
 
         if (ob_get_level() === 0) {
             ob_start();
@@ -664,13 +734,28 @@ class JavascriptRenderer
     }
 
     /**
+     * Same as renderOnShutdown() with $head = true
+     *
+     * @param boolean $here
+     * @param boolean $initialize
+     * @param boolean $renderStackedData
+     * @return string
+     */
+    public function renderOnShutdownWithHead($here = true, $initialize = true, $renderStackedData = true)
+    {
+        return $this->renderOnShutdown($here, $initialize, $renderStackedData, true);
+    }
+
+    /**
      * Is callback function for register_shutdown_function(...)
      *
      * @param boolean $here Set position of HTML. True if is to current position or false for end file
      * @param boolean $initialize Whether to render the de bug bar initialization code
      */
-    public function replaceTagInBuffer($here = true, $initialize = true, $renderStackedData = true) {
-        $render = $this->render($initialize, $renderStackedData);
+    public function replaceTagInBuffer($here = true, $initialize = true, $renderStackedData = true, $head = false)
+    {
+        $render = ($head ? $this->renderHead() : "")
+                . $this->render($initialize, $renderStackedData);
 
         $current = ($here && ob_get_level() > 0) ? ob_get_clean() : self::REPLACEABLE_TAG;
 
@@ -683,9 +768,9 @@ class JavascriptRenderer
 
     /**
      * Returns the code needed to display the debug bar
-     *
+     * 
      * AJAX request should not render the initialization code.
-     *
+     * 
      * @param boolean $initialize Whether to render the de bug bar initialization code
      * @return string
      */

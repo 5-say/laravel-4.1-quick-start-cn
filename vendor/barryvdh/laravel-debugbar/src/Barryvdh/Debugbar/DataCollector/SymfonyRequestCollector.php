@@ -5,9 +5,9 @@ namespace Barryvdh\Debugbar\DataCollector;
 use DebugBar\DataCollector\DataCollectorInterface;
 use DebugBar\DataCollector\Renderable;
 use DebugBar\DataCollector\DataCollector;
-use Symfony\Component\HttpKernel\DataCollector\RequestDataCollector;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Support\Contracts\ArrayableInterface;
 
 /**
  *
@@ -39,7 +39,6 @@ class SymfonyRequestCollector extends DataCollector implements DataCollectorInte
         $this->session = $session;
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -67,6 +66,7 @@ class SymfonyRequestCollector extends DataCollector implements DataCollectorInte
      */
     public function collect()
     {
+
         $request = $this->request;
         $response = $this->response;
 
@@ -77,19 +77,6 @@ class SymfonyRequestCollector extends DataCollector implements DataCollectorInte
         }
         if (count($cookies) > 0) {
             $responseHeaders['Set-Cookie'] = $cookies;
-        }
-
-        $attributes = array();
-        foreach ($request->attributes->all() as $key => $value) {
-            if ('_route' === $key && is_object($value)) {
-                $attributes['_route'] = $this->varToString($value->getPath());
-            } elseif ('_route_params' === $key) {
-                foreach ($value as $key => $v) {
-                    $attributes['_route_params'][$key] = $this->varToString($v);
-                }
-            } else {
-                $attributes[$key] = $this->varToString($value);
-            }
         }
 
         $sessionAttributes = array();
@@ -109,7 +96,6 @@ class SymfonyRequestCollector extends DataCollector implements DataCollectorInte
             'request_headers'    => $request->headers->all(),
             'request_server'     => $request->server->all(),
             'request_cookies'    => $request->cookies->all(),
-            'request_attributes' => $attributes,
             'response_headers'   => $responseHeaders,
             'session_attributes' => $sessionAttributes,
             'path_info'          => $request->getPathInfo(),
