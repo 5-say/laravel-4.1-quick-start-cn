@@ -64,9 +64,8 @@ laravel-4.1-quick-start-cn
 
 - **中文 Laravel4 教程** [github.com/maliang/LikeLaravel](https://github.com/maliang/LikeLaravel)
   - 是对官方文档的一份很好的补充，入门推荐 —— 主要维护者： **痛在远方**
-- **Ampou** [github.com/Ampou/App](https://github.com/Ampou/App)
-  - 基于 Laravel 4.0 的 sns 系统 —— 主要维护者： **fyiorb**
-  - 已部署 [ampou.com](http://ampou.com/)
+- **Soul** [github.com/Menglr/Soul](https://github.com/Menglr/Soul)
+  - 基于 Laravel 4.1 的微型论坛
 - **Laravel Cheat Sheet（Laravel 速查表）** [github.com/JesseObrien/laravel-cheatsheet](https://github.com/JesseObrien/laravel-cheatsheet)
   - 已部署 [cheats.jesse-obrien.ca](http://cheats.jesse-obrien.ca/)
 - **Laravel4-lang** [caouecs/Laravel4-lang](https://github.com/caouecs/Laravel4-lang)
