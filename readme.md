@@ -33,6 +33,8 @@ laravel-4.1-quick-start-cn
 
 - 短链生成 - [点击查看说明](mdDoc/demoUrlShortened.md)
   - 源于 **袁维隆** 的 *[Laravel4快速上手教程](http://beta.zexeo.com/course/3) 19-22 讲* 稍做改动，建议配合视频学习。
+  - 最近 **袁先生** 的网站已经打不开了，原因不明，而他曾经提到过希望以 **责修网** 为起点完成自己的创业，衷心的祝福他能够成功。
+  - 这里为了让大家可以继续学习，已将视频转移到 [网盘](http://pan.baidu.com/s/1dDd4mnn)，希望 **袁先生** 不要介意。
 
 <a name="important-points"></a>
 ## 重要知识点
