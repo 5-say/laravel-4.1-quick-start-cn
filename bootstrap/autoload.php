@@ -44,11 +44,15 @@ if (file_exists($compiled = __DIR__.'/compiled.php'))
 /*
 |--------------------------------------------------------------------------
 | Setup Patchwork UTF-8 Handling
+| 安装 Patchwork UTF-8 处理器
 |--------------------------------------------------------------------------
 |
 | The Patchwork library provides solid handling of UTF-8 strings as well
+| 这个Patchwork库为UTF-8字符串提供了坚实的处理器，
 | as provides replacements for all mb_* and iconv type functions that
+| 以及提供替代所有mb_*和iconv类型函数的方法，
 | are not available by default in PHP. We'll setup this stuff here.
+| 这并不是默认存在于PHP中的。我们会在这里安装这个东西。
 |
 */
 
