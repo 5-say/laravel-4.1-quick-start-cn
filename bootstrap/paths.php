@@ -5,11 +5,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Application Path
+	| 应用程序路径
 	|--------------------------------------------------------------------------
 	|
 	| Here we just defined the path to the application directory. Most likely
+	| 这里我们刚刚定义了到应用程序目录的路径。
 	| you will never need to change this value as the default setup should
+	| 很有可能你永远不需要改变这个值，将它做为默认的设置，
 	| work perfectly fine for the vast majority of all our applications.
+	| 应该可以为我们绝大部分的应用程序工作的很好。
 	|
 	*/
 
