@@ -28,11 +28,11 @@ require __DIR__.'/../vendor/autoload.php';
 |--------------------------------------------------------------------------
 |
 | To dramatically increase your application's performance, you may use a
-| 
+| 要显著提高应用程序的性能，
 | compiled class file which contains all of the classes commonly used
-| 
+| 你可以在一个请求中，使用其中包含了所有常用类的编译后的类文件。
 | by a request. The Artisan "optimize" is used to create this file.
-| 
+| Artisan的“optimize”命令可以用于创建这个文件。
 |
 */
 
