@@ -61,11 +61,15 @@ Patchwork\Utf8\Bootup::initMbstring();
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Auto Loader
+| 注册Laravel自动加载程序
 |--------------------------------------------------------------------------
 |
 | We register an auto-loader "behind" the Composer loader that can load
+| 我们在Composer的自动加载程序“之后”注册这个自动加载程序，
 | model classes on the fly, even if the autoload files have not been
+| 它可以载入零散的模型类，即使它还没有被重新生成到这个应用程序的autoload文件中。
 | regenerated for the application. We'll add it to the stack here.
+| 我们添加并叠加它到这里。
 |
 */
 
@@ -74,11 +78,15 @@ Illuminate\Support\ClassLoader::register();
 /*
 |--------------------------------------------------------------------------
 | Register The Workbench Loaders
+| 注册Workbench自动加载程序
 |--------------------------------------------------------------------------
 |
 | The Laravel workbench provides a convenient place to develop packages
+| 当在本地工作时，Laravel的workbench提供了一个便利的位置来开发资源包。
 | when working locally. However we will need to load in the Composer
+| 然而，我们需要在Composer的auto-load文件中加载这个包，
 | auto-load files for the packages so that these can be used here.
+| 以便这些资源包可以在这里使用。
 |
 */
 
