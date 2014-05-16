@@ -41,11 +41,15 @@ $env = $app->detectEnvironment(array(
 /*
 |--------------------------------------------------------------------------
 | Bind Paths
+| 绑定路径
 |--------------------------------------------------------------------------
 |
 | Here we are binding the paths configured in paths.php to the app. You
+| 这里我们绑定paths.php中的路径到应用程序。
 | should not be changing these here. If you need to change these you
+| 你不应该在这里进行修改。如果你需要变更这些路径，
 | may do so within the paths.php file and they will be bound here.
+| 你可以这样做，在paths.php文件中修改并在这一步完成绑定。
 |
 */
 
@@ -54,11 +58,15 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 /*
 |--------------------------------------------------------------------------
 | Load The Application
+| 载入应用程序
 |--------------------------------------------------------------------------
 |
 | Here we will load this Illuminate application. We will keep this in a
+| 这里我们将载入这个Illuminate应用程序。我们将在一个独立的位置保持它，
 | separate location so we can isolate the creation of an application
+| 因此我们可以，隔离这个负责创造的应用程序，
 | from the actual running of the application with a given request.
+| 从实际运行的应用程序与给定的请求中。
 |
 */
 
