@@ -78,11 +78,15 @@ require $framework.'/Illuminate/Foundation/start.php';
 /*
 |--------------------------------------------------------------------------
 | Return The Application
+| 运行应用程序
 |--------------------------------------------------------------------------
 |
 | This script returns the application instance. The instance is given to
+| 此脚本返回一个应用程序实例。该实例提供给脚本调用，
 | the calling script so we can separate the building of the instances
+| 因此我们可以独立构建这个实例，
 | from the actual running of the application and sending responses.
+| 为实际运行的应用程序和发送的响应。
 |
 */
 
