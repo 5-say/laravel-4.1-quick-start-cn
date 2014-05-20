@@ -5,11 +5,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
+	| 应用程序调试模式
 	|--------------------------------------------------------------------------
 	|
 	| When your application is in debug mode, detailed error messages with
+	| 当你的应用程序处于debug模式下时，
 	| stack traces will be shown on every error that occurs within your
+	| 所有发生在你应用程序中的错误，都将显示详细的错误信息和堆栈跟踪。
 	| application. If disabled, a simple generic error page is shown.
+	| 如果禁用，一个简单的普通错误页面将被显示。
 	|
 	*/
 
@@ -18,11 +22,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Application URL
+	| 应用程序URL
 	|--------------------------------------------------------------------------
 	|
 	| This URL is used by the console to properly generate URLs when using
+	| 这个URL用于控制台正确生成URL地址，当使用Artisan命令行工具时。
 	| the Artisan command line tool. You should set this to the root of
+	| 你应该设置它为你应用程序的根目录，
 	| your application so that it is used when running Artisan tasks.
+	| 这样当运行Artisan任务时就可以使用它。
 	|
 	*/
 
@@ -31,6 +39,7 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Application Timezone
+	| 应用程序时区
 	|--------------------------------------------------------------------------
 	|
 	| Here you may specify the default timezone for your application, which
