@@ -3,11 +3,15 @@
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
+| 应用程序 & 路由 过滤器
 |--------------------------------------------------------------------------
 |
 | Below you will find the "before" and "after" events for the application
+| 下面你将会找到应用程序的 "before" 和 "after" 事件，
 | which may be used to do any work before or after a request into your
+| 它可用于执行任何工作，在请求到达应用程序之前或之后。
 | application. Here you may also register your custom route filters.
+| 这里你也可以注册自定义的路由过滤器。
 |
 */
 
@@ -25,11 +29,15 @@ App::after(function($request, $response)
 /*
 |--------------------------------------------------------------------------
 | Authentication Filters
+| 验证过滤器
 |--------------------------------------------------------------------------
 |
 | The following filters are used to verify that the user of the current
+| 下面的过滤器是用于验证当前会话的用户，
 | session is logged into this application. The "basic" filter easily
+| 是否已经登录到应用程序。"basic" 过滤器
 | integrates HTTP Basic authentication for quick, simple checking.
+| 轻松集成了HTTP基础身份验证，来进行快速简单的检查。
 |
 */
 
@@ -47,11 +55,15 @@ Route::filter('auth.basic', function()
 /*
 |--------------------------------------------------------------------------
 | Guest Filter
+| 游客过滤器
 |--------------------------------------------------------------------------
 |
 | The "guest" filter is the counterpart of the authentication filters as
+| "guest" 过滤器与上面的验证过滤器对应，
 | it simply checks that the current user is not logged in. A redirect
+| 它只是简单的检查当前用户是未登录的。
 | response will be issued if they are, which you may freely change.
+| 如果他已经登录，那么一个重定向响应将会被发出，你可以自由的修改。
 |
 */
 
@@ -63,11 +75,15 @@ Route::filter('guest', function()
 /*
 |--------------------------------------------------------------------------
 | CSRF Protection Filter
+| CSRF保护 过滤器
 |--------------------------------------------------------------------------
 |
 | The CSRF filter is responsible for protecting your application against
+| 该CSRF过滤器是负责保护您的应用程序，
 | cross-site request forgery attacks. If this special token in a user
+| 针对跨站点请求伪造攻击。如果这个用户会话中的特殊令牌
 | session does not match the one given in this request, we'll bail.
+| 在这个请求中无法匹配一个给定的值，我们将给予保护。
 |
 */
 
