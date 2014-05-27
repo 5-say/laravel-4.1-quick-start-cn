@@ -43,8 +43,11 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Here you may specify the default timezone for your application, which
+	| 在这里你可以为你的应用程序指定默认时区，
 	| will be used by the PHP date and date-time functions. We have gone
+	| 这将被用于PHP的date和date-time系列函数。
 	| ahead and set this to a sensible default for you out of the box.
+	| 我们已经提前设置了一个合理的默认值，让你可以直接使用。
 	|
 	*/
 
@@ -53,11 +56,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Application Locale Configuration
+	| 应用程序本地化配置
 	|--------------------------------------------------------------------------
 	|
 	| The application locale determines the default locale that will be used
+	| 该应用程序locale值决定了默认语言环境，他将被用于
 	| by the translation service provider. You are free to set this value
+	| 翻译程序的服务提供者，你可以自由的设置这个值
 	| to any of the locales which will be supported by the application.
+	| 为任何应用程序所支持的语言环境。
 	|
 	*/
 
@@ -66,11 +73,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Application Fallback Locale
+	| 应用程序备用语言环境
 	|--------------------------------------------------------------------------
 	|
 	| The fallback locale determines the locale to use when the current one
+	| 这个fallback locale值决定了当前没有可用的语言包时要采用的备用语言环境。
 	| is not available. You may change the value to correspond to any of
+	| 你可以更改该值为对应的任意
 	| the language folders that are provided through your application.
+	| 通过你应用程序提供的语言包文件夹。
 	|
 	*/
 
@@ -79,11 +90,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Encryption Key
+	| 秘钥
 	|--------------------------------------------------------------------------
 	|
 	| This key is used by the Illuminate encrypter service and should be set
+	| 这个秘钥是用于Illuinate encrypter服务的，并且必须设置为一个随机的
 	| to a random, 32 character string, otherwise these encrypted strings
+	| 32位字符串，否则这些加密字符串将是不安全的。
 	| will not be safe. Please do this before deploying an application!
+	| 请在应用程序部署前设置好它。
 	|
 	*/
 
@@ -92,11 +107,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers
+	| 自动载入的服务提供者
 	|--------------------------------------------------------------------------
 	|
 	| The service providers listed here will be automatically loaded on the
+	| 这个服务提供者列表将被自动加载，在请求你的应用程序时。
 	| request to your application. Feel free to add your own services to
+	| 随意的添加你自己的服务到这个数组，
 	| this array to grant expanded functionality to your applications.
+	| 它授予你拓展你应用程序功能的权利。
 	|
 	*/
 
@@ -129,18 +148,22 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Barryvdh\Debugbar\ServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider', // laravel调试工具栏
 
 	),
 
 	/*
 	|--------------------------------------------------------------------------
 	| Service Provider Manifest
+	| 服务提供者清单
 	|--------------------------------------------------------------------------
 	|
 	| The service provider manifest is used by Laravel to lazy load service
+	| 这个服务提供者清单是用于Laravel延迟加载服务提供者的，
 	| providers which are not needed for each request, as well to keep a
+	| 这样就不需要每一次都遍历执行request，只要保持一个包含所有服务的列表。
 	| list of all of the services. Here, you may set its storage spot.
+	| 这里，你可以设置它的缓存目录。
 	|
 	*/
 
@@ -149,11 +172,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Class Aliases
+	| 类别名
 	|--------------------------------------------------------------------------
 	|
 	| This array of class aliases will be registered when this application
+	| 这个类别名数组将在这个应用程序启动时注册。
 	| is started. However, feel free to register as many as you wish as
+	| 然而，你可以随意的注册更多你需要的别名，它们将被懒加载，
 	| the aliases are "lazy" loaded so they don't hinder performance.
+	| 因此它们不妨碍性能。
 	|
 	*/
 
