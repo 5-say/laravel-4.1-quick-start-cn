@@ -12,14 +12,14 @@ laravel-4.1-quick-start-cn
 
 ---
 
+> laravel 更新至 v4.1.29
+
+---
+
 - [重要知识点](/mdDoc/important-points.md)
 - [学习资料推荐](/mdDoc/learning-materials.md)
 - [相关开源项目推荐](/mdDoc/open-source.md)
 - [相关站点推荐](/mdDoc/related-sites.md)
-
----
-
-> laravel 更新至 v4.1.29
 
 ---
 
