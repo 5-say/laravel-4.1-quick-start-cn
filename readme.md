@@ -3,11 +3,12 @@ laravel-4.1-quick-start-cn
 
 这是一个 laravel-4.1 的完整包（包含了 vendor 目录），常用的源码已经补充中文注释，方便大家快速的开始学习和体验 laravel 框架。
 
-- **注意：** 此项目在原始的 laravel 基础上引入了两个开发中常用的依赖包。
-  - [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)：laravel 调试工具栏。
-  - [raveren/kint](https://github.com/raveren/kint)：PHP输出调试工具。
-- 整合了 laravel 基础语言包的中文部分。
-  - [caouecs/Laravel4-lang](https://github.com/caouecs/Laravel4-lang)
+- **注意：**
+  - 此项目在原始的 laravel 基础上引入了两个开发中常用的依赖包。
+    - [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)：laravel 调试工具栏。
+    - [raveren/kint](https://github.com/raveren/kint)：PHP输出调试工具。
+  - 整合了 laravel 基础语言包的中文部分。
+    - [caouecs/Laravel4-lang](https://github.com/caouecs/Laravel4-lang)：laravel 基础语言包。
 
 
 
