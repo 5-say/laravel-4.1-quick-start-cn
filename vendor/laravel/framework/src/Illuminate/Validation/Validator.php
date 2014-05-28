@@ -152,7 +152,7 @@ class Validator implements MessageProviderInterface {
 		{
 			// If this value is an instance of the HttpFoundation File class we will
 			// remove it from the data array and add it to the files array, which
-			// is used to conveniently separate out the files from other datas.
+			// we use to conveniently separate out these files from other data.
 			if ($value instanceof File)
 			{
 				$this->files[$key] = $value;
@@ -1087,7 +1087,7 @@ class Validator implements MessageProviderInterface {
 	{
 		if ( ! $value instanceof File)
 		{
-			return true;
+			return false;
 		}
 
 		// The Symfony File class should do a decent job of guessing the extension
@@ -1684,7 +1684,7 @@ class Validator implements MessageProviderInterface {
 	 */
 	protected function replaceBefore($message, $attribute, $rule, $parameters)
 	{
-		if ( ! ($date = strtotime($parameters[0])))
+		if ( ! (strtotime($parameters[0])))
 		{
 			return str_replace(':date', $this->getAttribute($parameters[0]), $message);
 		}
@@ -1705,7 +1705,7 @@ class Validator implements MessageProviderInterface {
 	 */
 	protected function replaceAfter($message, $attribute, $rule, $parameters)
 	{
-		if ( ! ($date = strtotime($parameters[0])))
+		if ( ! (strtotime($parameters[0])))
 		{
 			return str_replace(':date', $this->getAttribute($parameters[0]), $message);
 		}
