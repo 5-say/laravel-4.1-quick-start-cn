@@ -17,3 +17,4 @@
   - ...
 - **基于 laravel 4.1 的简易博客实例** [5-say/laravel-4.1-simple-blog](https://github.com/5-say/laravel-4.1-simple-blog)
 - **vendor 目录清理程序** [5-say/VendorCleaner](https://github.com/5-say/VendorCleaner)
+  - 如非必要，不推荐使用。可以将其作为简单的 Composer 资源包开发范例。
