@@ -25,7 +25,14 @@ laravel-4.1-quick-start-cn
 > 大家可以配合下面的载入流程，查看源文件及其注释，加深对框架的理解。
 
 - [/public/index.php](/public/index.php)
-- [/bootstrap/autoload.php](/bootstrap/autoload.php)
+  - [/bootstrap/autoload.php](/bootstrap/autoload.php)
+    - [/vendor/composer/autoload_real.php](/vendor/composer/autoload_real.php)
+  - [/bootstrap/start.php](/bootstrap/start.php)
+    - [/vendor/laravel/framework/src/Illuminate/Foundation/start.php](/vendor/laravel/framework/src/Illuminate/Foundation/start.php)
+      - [/app/start/global.php](/app/start/global.php)
+        - [/app/filters.php](/app/filters.php)
+      - [/app/start/{$env}.php](/app/start/local.php)
+      - [/app/routes.php](/app/routes.php)
 
 
 
