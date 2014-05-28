@@ -19,11 +19,13 @@ laravel-4.1-quick-start-cn
 
 ---
 
+## 跟着源码学框架
 
+> laravel 框架本身对源码做了非常详细的注释，跟着源码学习可以更好的理解框架的运行流程。
+> 大家可以配合下面的载入流程，查看源文件及其注释，加深对框架的理解。
 
-
-
-
+- [/public/index.php](/public/index.php)
+- [/bootstrap/autoload.php](/bootstrap/autoload.php)
 
 
 
