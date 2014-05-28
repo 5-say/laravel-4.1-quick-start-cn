@@ -178,7 +178,7 @@ return array(
 	| This array of class aliases will be registered when this application
 	| 这个类别名数组将在这个应用程序启动时注册。
 	| is started. However, feel free to register as many as you wish as
-	| 然而，你可以随意的注册更多你需要的别名，它们将被懒加载，
+	| 然而，你可以随意的注册更多你需要的别名，它们将被延迟加载，
 	| the aliases are "lazy" loaded so they don't hinder performance.
 	| 因此它们不妨碍性能。
 	|
