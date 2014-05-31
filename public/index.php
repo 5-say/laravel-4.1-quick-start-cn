@@ -13,7 +13,7 @@
 |--------------------------------------------------------------------------
 |
 | Composer provides a convenient, automatically generated class loader
-| Composer提供了一个便利，为我们的应用程序自动生成了一个类加载器。
+| Composer 提供了一个便利，为我们的应用程序自动生成了一个类加载器。
 | for our application. We just need to utilize it! We'll require it
 | 我们只需要直接使用它！我们在脚本的这个位置引入它，
 | into the script here so that we do not have to worry about the
@@ -32,7 +32,7 @@ require __DIR__.'/../bootstrap/autoload.php';
 |--------------------------------------------------------------------------
 |
 | We need to illuminate PHP development, so let's turn on the lights.
-| 我们需要照亮PHP的开发，所以让我们打开灯光。
+| 我们需要照亮 PHP 的开发，所以让我们打开灯光。
 | This bootstraps the framework and gets it ready for use, then it
 | 在这里引导这个框架并获取准备好的它来使用，
 | will load up this application so that we can run it and send
@@ -51,7 +51,7 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 |--------------------------------------------------------------------------
 |
 | Once we have the application, we can simply call the run method,
-| 一旦我们有了一个应用程序，我们可以简单的执行这个run方法，
+| 一旦我们有了一个应用程序，我们可以简单的执行这个 run 方法，
 | which will execute the request and send the response back to
 | 这将执行这个请求，并发送一个响应返回客户端的浏览器，
 | the client's browser allowing them to enjoy the creative

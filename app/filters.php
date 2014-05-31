@@ -37,7 +37,7 @@ App::after(function($request, $response)
 | session is logged into this application. The "basic" filter easily
 | 是否已经登录到应用程序。"basic" 过滤器
 | integrates HTTP Basic authentication for quick, simple checking.
-| 轻松集成了HTTP基础身份验证，来进行快速简单的检查。
+| 轻松集成了 HTTP 基础身份验证，来进行快速简单的检查。
 |
 */
 
@@ -79,7 +79,7 @@ Route::filter('guest', function()
 |--------------------------------------------------------------------------
 |
 | The CSRF filter is responsible for protecting your application against
-| 该CSRF过滤器是负责保护您的应用程序，
+| 该 CSRF 过滤器是负责保护您的应用程序，
 | cross-site request forgery attacks. If this special token in a user
 | 针对跨站点请求伪造攻击。如果这个用户会话中的特殊令牌
 | session does not match the one given in this request, we'll bail.

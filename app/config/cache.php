@@ -5,6 +5,7 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Default Cache Driver
+	| 默认缓存驱动
 	|--------------------------------------------------------------------------
 	|
 	| This option controls the default cache "driver" that will be used when
