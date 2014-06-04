@@ -37,14 +37,14 @@ laravel-4.1-quick-start-cn
   - [/bootstrap/autoload.php](/bootstrap/autoload.php)
     - [/vendor/composer/autoload_real.php](/vendor/composer/autoload_real.php)
 
-> 通过 `getLoader` 依次载入并处理了 /vendor/composer 目录下的5个索引文件：
-  > include_paths.php
-  > autoload_namespaces.php
-  > autoload_psr4.php
-  > autoload_classmap.php
-  > autoload_files.php
-> 分别对应着各资源包 composer.json 文件中的：
-  > [include-path](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#include-path)
+> 通过 `getLoader` 依次载入并处理了 /vendor/composer 目录下的5个索引文件：  
+>   include_paths.php  
+>   autoload_namespaces.php  
+>   autoload_psr4.php  
+>   autoload_classmap.php  
+>   autoload_files.php  
+> 分别对应着各资源包 composer.json 文件中的：  
+>   [include-path](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#include-path)  
 
   - [/bootstrap/start.php](/bootstrap/start.php)
     - [/vendor/laravel/framework/src/Illuminate/Foundation/start.php](/vendor/laravel/framework/src/Illuminate/Foundation/start.php)
