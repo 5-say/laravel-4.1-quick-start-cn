@@ -4,7 +4,8 @@
   - autoload_psr4.php
   - autoload_classmap.php
   - autoload_files.php
-- 分别对应着各资源包 composer.json 文件中的：
+    - laravel 的辅助函数库 `/vendor/laravel/framework/src/Illuminate/Support/helpers.php` 即是在这步载入的。
+- 分别对应着各资源包 composer.json 文件中定义的：
   - [include-path](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#include-path)
   - autoload
       - [psr-0](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#psr-0)
