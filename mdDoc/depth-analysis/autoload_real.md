@@ -6,3 +6,8 @@
   - autoload_files.php
 - 分别对应着各资源包 composer.json 文件中的：
   - [include-path](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#include-path)
+  - autoload
+      - [psr-0](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#psr-0)
+      - [psr-4](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#psr-4)
+      - [classmap](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#classmap)
+      - [files](https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/04-schema.md#files)
