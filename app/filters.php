@@ -26,6 +26,28 @@ App::after(function($request, $response)
 	//
 });
 
+/**
+ * 应用程序事件执行顺序如下：
+ *     1.执行应用程序事件          App::before($request)
+ *     2.执行前置操作                 Route::filter($route, $request)
+ *     3.执行了之前注册进路由的回调函数，并获取响应实例
+ *     4.执行后置操作                 Route::filter($route, $request, $response)
+ *     5.执行应用程序事件          App::after($request, $response)
+ *     6.发送 3 中获取的响应实例
+ *     7.执行应用程序事件          App::finish($request, $response)
+ *     8.执行应用程序事件          App::shutdown($application)
+ */
+
+// App::finish(function($request, $response)
+// {
+        
+// });
+
+// App::shutdown(function($application)
+// {
+        
+// });
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Filters
@@ -94,3 +116,27 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+|--------------------------------------------------------------------------
+| 自定义 [前置] 过滤器
+|--------------------------------------------------------------------------
+|
+*/
+
+// Route::filter('beforeFilter', function($route, $request)
+// {
+        
+// });
+
+/*
+|--------------------------------------------------------------------------
+| 自定义 [后置] 过滤器
+|--------------------------------------------------------------------------
+|
+*/
+
+// Route::filter('afterFilter', function($route, $request, $response)
+// {
+        
+// });
