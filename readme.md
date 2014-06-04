@@ -39,10 +39,22 @@ laravel-4.1-quick-start-cn
       - [深入解析](/mdDoc/depth-analysis/autoload_real.md)
   - [/bootstrap/start.php](/bootstrap/start.php)
     - [/vendor/laravel/framework/src/Illuminate/Foundation/start.php](/vendor/laravel/framework/src/Illuminate/Foundation/start.php)
-      - [/app/start/global.php](/app/start/global.php)
-        - [/app/filters.php](/app/filters.php)
-      - [/app/start/{$env}.php](/app/start/local.php)
-      - [/app/routes.php](/app/routes.php)
+      - 关闭原生 PHP 错误报告，防止系统信息泄露
+      - 检测 PHP 是否开启 mcrypt 拓展
+      - 检测是否处于测试环境中
+      - 设置应用程序 Facade 实例
+      - 注册了配置文件目录 app_path('config')
+        - 注意：配置文件是按需加载的，仅在首次使用某配置时才载入相应配置文件
+      - 注册应用程序异常处理
+      - 设置默认时区 [ app/config/app.php -> timezone ]
+      - 注册别名导入 [ app/config/app.php -> aliases ]
+      - 启用 HTTP 方法覆盖，以支持 PUT 和 DELETE 表单请求
+      - 注册核心服务提供商 [ app/config/app.php -> providers ]
+      - 注册所有 provider 的 boot 方法
+      - 载入全局启动文件 [/app/start/global.php](/app/start/global.php)
+        - 载入过滤器文件[/app/filters.php](/app/filters.php)
+      - 载入运行环境启动文件[/app/start/{$env}.php](/app/start/local.php)
+      - 载入路由文件[/app/routes.php](/app/routes.php)
 
 
 
