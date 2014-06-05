@@ -49,8 +49,11 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| When using the native session driver, we need a location where session
+	| 当使用原生 session 驱动，我们需要一个位置来存储 session 文件。
 	| files may be stored. A default has been set for you but a different
+	| 这里已经为你设置了一个默认值，但一个不同的
 	| location may be specified. This is only needed for file sessions.
+	| 位置可以被指定。这仅仅是基于文件的 session 所需要的。
 	|
 	*/
 
@@ -59,11 +62,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Database Connection
+	| Session 数据库连接名称
 	|--------------------------------------------------------------------------
 	|
 	| When using the "database" or "redis" session drivers, you may specify a
+	| 当使用 "database" 或 "redis" session 驱动时，你需要指定一个
 	| connection that should be used to manage these sessions. This should
+	| 连接，它将被用于管理这些 session。这应该
 	| correspond to a connection in your database configuration options.
+	| 对应于你 database 配置文件 connections 选项中的一个连接。
 	|
 	*/
 
@@ -72,6 +79,7 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Database Table
+	| Session 数据库表名称
 	|--------------------------------------------------------------------------
 	|
 	| When using the "database" session driver, you may specify the table we
