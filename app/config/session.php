@@ -83,8 +83,11 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| When using the "database" session driver, you may specify the table we
+	| 当使用 "database" session 驱动时，你需要指定一个表，我们
 	| should use to manage the sessions. Of course, a sensible default is
+	| 应该用它来管理 session。当然，一个合理的默认值
 	| provided for you; however, you are free to change this as needed.
+	| 已经提供给你；然而，你可以根据需要自由的改变这个值。
 	|
 	*/
 
@@ -93,11 +96,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Sweeping Lottery
+	| Session 清理几率
 	|--------------------------------------------------------------------------
 	|
 	| Some session drivers must manually sweep their storage location to get
+	| 一些 session 驱动必须手动清理他们的存储位置，以摆脱
 	| rid of old sessions from storage. Here are the chances that it will
+	| 旧的 session 存储。这里有一个概率，它将
 	| happen on a given request. By default, the odds are 2 out of 100.
+	| 发生在一个给定的请求中。默认情况下，几率是2%。
 	|
 	*/
 
