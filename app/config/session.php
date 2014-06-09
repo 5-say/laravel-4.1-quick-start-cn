@@ -113,11 +113,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Cookie Name
+	| Session 对应的 Cookie 名称
 	|--------------------------------------------------------------------------
 	|
 	| Here you may change the name of the cookie used to identify a session
+	| 这里你需要修改这个 cookie 名称，用于通过 ID 识别 session 实例。
 	| instance by ID. The name specified here will get used every time a
+	| 这里指定的名称，将会用于任何时候
 	| new session cookie is created by the framework for every driver.
+	| 由框架任意驱动创建的，一个新 session 的 cookie。
 	|
 	*/
 
@@ -126,6 +130,7 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Cookie Path
+	| Session 的 Cookie 路径
 	|--------------------------------------------------------------------------
 	|
 	| The session cookie path determines the path for which the cookie will
@@ -139,6 +144,7 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Cookie Domain
+	| Session 的 Cookie 域名
 	|--------------------------------------------------------------------------
 	|
 	| Here you may change the domain of the cookie used to identify a session
