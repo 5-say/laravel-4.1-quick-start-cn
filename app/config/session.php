@@ -134,8 +134,11 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| The session cookie path determines the path for which the cookie will
+	| session 的 cookie 路径决定了，哪些路径下 cookie 将被
 	| be regarded as available. Typically, this will be the root path of
+	| 视作可用。通常，这将是你应用程序的根路径
 	| your application but you are free to change this when necessary.
+	| 但在必要时你可以自由的改变这个值。
 	|
 	*/
 
@@ -144,12 +147,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Cookie Domain
-	| Session 的 Cookie 域名
+	| Session 的 Cookie 子域名
 	|--------------------------------------------------------------------------
 	|
 	| Here you may change the domain of the cookie used to identify a session
+	| 在这里你可以更改，你应用程序中用于标识 session 的 cookie 所使用的域名。
 	| in your application. This will determine which domains the cookie is
+	| 这将决定哪些域名下的 cookie
 	| available to in your application. A sensible default has been set.
+	| 在您的应用程序中是可用的。这里已经为您设定了一个明智的默认值。
 	|
 	*/
 
@@ -158,11 +164,15 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| HTTPS Only Cookies
+	| 仅在 HTTPS 连接下发送 Cookies
 	|--------------------------------------------------------------------------
 	|
 	| By setting this option to true, session cookies will only be sent back
+	| 通过将此选项设置为 true，session 的 cookies 将仅在
 	| to the server if the browser has a HTTPS connection. This will keep
+	| HTTPS 连接下发送回服务器。这将保持
 	| the cookie from being sent to you if it can not be done securely.
+	| 该 cookie 仅被发送给你，如果它不能安全的完成。
 	|
 	*/
 
