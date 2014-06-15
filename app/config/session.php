@@ -147,7 +147,7 @@ return array(
 	/*
 	|--------------------------------------------------------------------------
 	| Session Cookie Domain
-	| Session 的 Cookie 子域名
+	| Session 的 Cookie 域名
 	|--------------------------------------------------------------------------
 	|
 	| Here you may change the domain of the cookie used to identify a session
