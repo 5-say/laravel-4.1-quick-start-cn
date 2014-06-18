@@ -78,6 +78,13 @@ App::error(function(Exception $exception, $code)
 | to the user if maintenance mode is in effect for the application.
 | 如果应用程序的维护模式生效。
 |
+| 开启维护模式的方法：（以下任意一种即可）
+|     1、php artisan down 命令
+|     2、手动在 app\storage\meta 文件夹下新建 down 文件（注意：没有后缀名）
+| 关闭维护模式的方法：（以下任意一种即可）
+|     1、php artisan up 命令
+|     2、手动删除在 app\storage\meta 文件夹下的 down 文件
+|
 */
 
 App::down(function()

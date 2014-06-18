@@ -100,6 +100,9 @@ return array(
 	| will not be safe. Please do this before deploying an application!
 	| 请在应用程序部署前设置好它。
 	|
+	| 在首次执行安装命令 composer install 时将自动生成，
+	| 也可以通过 php artisan key:generate 命令重新生成。
+	|
 	*/
 
 	'key' => 'YourSecretKey!!!',
