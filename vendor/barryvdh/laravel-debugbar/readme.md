@@ -7,7 +7,7 @@ It bootstraps some Collectors to work with Laravel and implements a couple custo
 It is configured to display Redirects and (jQuery) Ajax Requests. (Shown in a dropdown)
 Read [the documentation](http://phpdebugbar.com/docs/) for more configuration options.
 
-![Screenshot](http://i.imgur.com/zKUT5F9.png)
+![Screenshot](http://i.imgur.com/VmuNA4w.png)
 
 Note: Use the DebugBar only in development. It can slow the application down (because it has to gather data). So when experiencing slowness, try disabling some of the collectors.
 
@@ -37,7 +37,7 @@ It also provides a Facade interface for easy logging Messages, Exceptions and Ti
 
 ## Installation
 
-Require this package in your composer.json and run composer update (or run `composer require barryvdh/laravel-debugbar:dev-master` directly):
+Require this package in your composer.json and run composer update (or run `composer require barryvdh/laravel-debugbar:1.x` directly):
 
     "barryvdh/laravel-debugbar": "1.*"
 

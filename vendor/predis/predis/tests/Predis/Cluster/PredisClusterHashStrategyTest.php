@@ -277,6 +277,7 @@ class PredisClusterHashStrategyTest extends PredisTestCase
             'GETSET'                => 'keys-first',
             'INCR'                  => 'keys-first',
             'INCRBY'                => 'keys-first',
+            'INCRBYFLOAT'           => 'keys-first',
             'SETBIT'                => 'keys-first',
             'SETEX'                 => 'keys-first',
             'MSET'                  => 'keys-interleaved',
@@ -341,6 +342,9 @@ class PredisClusterHashStrategyTest extends PredisTestCase
             'ZSCORE'                => 'keys-first',
             'ZUNIONSTORE'           => 'keys-zaggregated',
             'ZSCAN'                 => 'keys-first',
+            'ZLEXCOUNT'             => 'keys-first',
+            'ZRANGEBYLEX'           => 'keys-first',
+            'ZREMRANGEBYLEX'        => 'keys-first',
 
             /* commands operating on hashes */
             'HDEL'                  => 'keys-first',
@@ -357,6 +361,11 @@ class PredisClusterHashStrategyTest extends PredisTestCase
             'HSETNX'                => 'keys-first',
             'HVALS'                 => 'keys-first',
             'HSCAN'                 => 'keys-first',
+
+            /* commands operating on HyperLogLog */
+            'PFADD'                 => 'keys-first',
+            'PFCOUNT'               => 'keys-all',
+            'PFMERGE'               => 'keys-all',
 
             /* scripting */
             'EVAL'                  => 'keys-script',

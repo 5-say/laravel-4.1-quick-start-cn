@@ -41,6 +41,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 
         $this->app['router']->get('_debugbar/open', array('as' => 'debugbar.openhandler', function() use($app){
 
+            // Reflash session data
+            $app['session']->reflash();
+            
             $debugbar = $app['debugbar'];
 
             if(!$debugbar->isEnabled()){
@@ -94,8 +97,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
                 return new Console\ClearCommand($app['debugbar']);
             });
 
-        $this->commands('command.debugbar.publish');
-        $this->commands('command.debugbar.clear');
+        $this->commands(array('command.debugbar.publish', 'command.debugbar.clear'));
 
         if($this->shouldUseMiddleware()){
             $this->app->middleware('Barryvdh\Debugbar\Middleware', array($this->app));

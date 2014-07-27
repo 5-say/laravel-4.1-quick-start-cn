@@ -239,9 +239,17 @@ class ServerVersion28 extends ServerProfile
 
             /* commands operating on sorted sets */
             'zscan'                     => 'Predis\Command\ZSetScan',
+            'zlexcount'                 => 'Predis\Command\ZSetLexCount',
+            'zrangebylex'               => 'Predis\Command\ZSetRangeByLex',
+            'zremrangebylex'            => 'Predis\Command\ZSetRemoveRangeByLex',
 
             /* commands operating on hashes */
             'hscan'                     => 'Predis\Command\HashScan',
+
+            /* commands operating on HyperLogLog */
+            'pfadd'                     => 'Predis\Command\HyperLogLogAdd',
+            'pfcount'                   => 'Predis\Command\HyperLogLogCount',
+            'pfmerge'                   => 'Predis\Command\HyperLogLogMerge',
         );
     }
 }

@@ -18,7 +18,7 @@
  * Here's a short example of how to use this library:
  * <code>
  * <?php
- *    include('Crypt/Hash.php');
+ *    include 'Crypt/Hash.php';
  *
  *    $hash = new Crypt_Hash('sha1');
  *
@@ -77,7 +77,6 @@ define('CRYPT_HASH_MODE_HASH',     3);
  *
  * @package Crypt_Hash
  * @author  Jim Wigginton <terrafrost@php.net>
- * @version 0.1.0
  * @access  public
  */
 class Crypt_Hash
