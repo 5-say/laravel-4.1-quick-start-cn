@@ -244,6 +244,10 @@ class LaravelDebugbar extends DebugBar
             if($this->app['config']->get('laravel-debugbar::config.options.db.with_params')){
                 $queryCollector->setRenderSqlWithParams(true);
             }
+            
+            if($this->app['config']->get('laravel-debugbar::config.options.db.backtrace')){
+                $queryCollector->setFindSource(true);
+            }
 
             $this->addCollector($queryCollector);
 
@@ -444,6 +448,8 @@ class LaravelDebugbar extends DebugBar
             /** @var \DebugBar\DataCollector\TimeDataCollector $collector */
             $collector = $this->getCollector('time');
             $collector->measure($label, $closure);
+        }else{
+            $closure();
         }
     }
 
@@ -496,7 +502,9 @@ class LaravelDebugbar extends DebugBar
 
         if(method_exists($renderer, 'addAssets')){
             $dir = 'packages/barryvdh/laravel-debugbar';
-            $renderer->addAssets(array('laravel-debugbar.css'), array(), $this->app['path.public'].'/'.$dir, $this->app['url']->asset($dir));
+            $css = array('laravel-debugbar.css');
+            $js = $this->getStorage() ? array('openhandler.js') : array();
+            $renderer->addAssets($css,$js, $this->app['path.public'].'/'.$dir, $this->app['url']->asset($dir));
         }
 
         $renderedContent = $renderer->renderHead() . $renderer->render();

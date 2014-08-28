@@ -264,6 +264,26 @@ class Carbon extends DateTime
    }
 
    /**
+    * Create a Carbon instance for the greatest supported date.
+    *
+    * @return Carbon
+    */
+   public static function maxValue()
+   {
+      return static::createFromTimestamp(PHP_INT_MAX);
+   }
+
+   /**
+    * Create a Carbon instance for the lowest supported date.
+    *
+    * @return Carbon
+    */
+   public static function minValue()
+   {
+      return static::createFromTimestamp(~PHP_INT_MAX);
+   }
+
+   /**
     * Create a new Carbon instance from a specific date and time.
     *
     * If any of $year, $month or $day are set to null their now() values
@@ -411,40 +431,34 @@ class Carbon extends DateTime
    {
       switch ($name) {
          case 'year':
-            return intval($this->format('Y'));
-
          case 'month':
-            return intval($this->format('n'));
-
          case 'day':
-            return intval($this->format('j'));
-
          case 'hour':
-            return intval($this->format('G'));
-
          case 'minute':
-            return intval($this->format('i'));
-
          case 'second':
-            return intval($this->format('s'));
-
          case 'dayOfWeek':
-            return intval($this->format('w'));
-
          case 'dayOfYear':
-            return intval($this->format('z'));
+         case 'weekOfYear':
+         case 'daysInMonth':
+         case 'timestamp':
+            $formats = array(
+               'year'        => 'Y',
+               'month'       => 'n',
+               'day'         => 'j',
+               'hour'        => 'G',
+               'minute'      => 'i',
+               'second'      => 's',
+               'dayOfWeek'   => 'w',
+               'dayOfYear'   => 'z',
+               'weekOfYear'  => 'W',
+               'daysInMonth' => 't',
+               'timestamp'   => 'U',
+            );
+
+            return intval($this->format($formats[$name]));
 
          case 'weekOfMonth':
             return intval(floor(($this->day - 1) / 7)) + 1;
-
-         case 'weekOfYear':
-            return intval($this->format('W'));
-
-         case 'daysInMonth':
-            return intval($this->format('t'));
-
-         case 'timestamp':
-            return intval($this->format('U'));
 
          case 'age':
             return intval($this->diffInYears());
@@ -1165,7 +1179,7 @@ class Carbon extends DateTime
     */
    public function isYesterday()
    {
-      return $this->toDateString() === static::now($this->tz)->subDay()->toDateString();
+      return $this->toDateString() === static::yesterday($this->tz)->toDateString();
    }
 
    /**
@@ -1185,7 +1199,7 @@ class Carbon extends DateTime
     */
    public function isTomorrow()
    {
-      return $this->toDateString() === static::now($this->tz)->addDay()->toDateString();
+      return $this->toDateString() === static::tomorrow($this->tz)->toDateString();
    }
 
    /**
@@ -1216,6 +1230,17 @@ class Carbon extends DateTime
    public function isLeapYear()
    {
       return $this->format('L') == '1';
+   }
+   
+   /**
+    * Checks if the passed in date is the same day as the instance current day.
+    *
+    * @param  Carbon  $dt
+    * @return boolean
+    */
+   public function isSameDay(Carbon $dt)
+   {
+      return $this->toDateString() === $dt->toDateString();
    }
 
    ///////////////////////////////////////////////////////////////////
@@ -1617,6 +1642,21 @@ class Carbon extends DateTime
    }
 
    /**
+    * Get the difference in weeks
+    *
+    * @param  Carbon  $dt
+    * @param  boolean $abs Get the absolute of the difference
+    *
+    * @return integer
+    */
+   public function diffInWeeks(Carbon $dt = null, $abs = true)
+   {
+      $dt = ($dt === null) ? static::now($this->tz) : $dt;
+
+      return intval($this->diffInDays($dt, $abs) / self::DAYS_PER_WEEK);
+   }
+
+   /**
     * Get the difference in days
     *
     * @param  Carbon  $dt
@@ -1641,8 +1681,6 @@ class Carbon extends DateTime
     */
    public function diffInHours(Carbon $dt = null, $abs = true)
    {
-      $dt = ($dt === null) ? static::now($this->tz) : $dt;
-
       return intval($this->diffInMinutes($dt, $abs) / self::MINUTES_PER_HOUR);
    }
 
@@ -1656,8 +1694,6 @@ class Carbon extends DateTime
     */
    public function diffInMinutes(Carbon $dt = null, $abs = true)
    {
-      $dt = ($dt === null) ? static::now($this->tz) : $dt;
-
       return intval($this->diffInSeconds($dt, $abs) / self::SECONDS_PER_MINUTE);
    }
 
@@ -1713,13 +1749,13 @@ class Carbon extends DateTime
 
       $delta = $other->diffInSeconds($this);
 
-      // 4 weeks per month, 365 days per year... good enough!!
+      // a little weeks per month, 365 days per year... good enough!!
       $divs = array(
          'second' => self::SECONDS_PER_MINUTE,
          'minute' => self::MINUTES_PER_HOUR,
          'hour'   => self::HOURS_PER_DAY,
          'day'    => self::DAYS_PER_WEEK,
-         'week'   => 4,
+         'week'   => 30/7,
          'month'  => self::MONTHS_PER_YEAR
       );
 
@@ -1731,8 +1767,10 @@ class Carbon extends DateTime
             break;
          }
 
-         $delta = floor($delta / $divValue);
+         $delta = $delta / $divValue;
       }
+
+      $delta = floor($delta);
 
       if ($delta == 0) {
          $delta = 1;
@@ -1897,13 +1935,11 @@ class Carbon extends DateTime
    */
    public function next($dayOfWeek = null)
    {
-      $this->startOfDay();
-
       if ($dayOfWeek === null) {
          $dayOfWeek = $this->dayOfWeek;
       }
 
-      return $this->modify('next ' . self::$days[$dayOfWeek]);
+      return $this->startOfDay()->modify('next ' . self::$days[$dayOfWeek]);
    }
 
    /**
@@ -1918,13 +1954,11 @@ class Carbon extends DateTime
    */
    public function previous($dayOfWeek = null)
    {
-      $this->startOfDay();
-
       if ($dayOfWeek === null) {
          $dayOfWeek = $this->dayOfWeek;
       }
 
-      return $this->modify('last ' . self::$days[$dayOfWeek]);
+      return $this->startOfDay()->modify('last ' . self::$days[$dayOfWeek]);
    }
 
    /**
@@ -1982,17 +2016,11 @@ class Carbon extends DateTime
    */
    public function nthOfMonth($nth, $dayOfWeek)
    {
-      $dt = $this->copy();
-      $dt->firstOfMonth();
-      $month = $dt->month;
-      $year = $dt->year;
+      $dt = $this->copy()->firstOfMonth();
+      $check = $dt->format('Y-m');
       $dt->modify('+' . $nth . ' ' . self::$days[$dayOfWeek]);
 
-      if ($month !== $dt->month || $year !== $dt->year) {
-         return false;
-      }
-
-      return $this->modify($dt);
+      return ($dt->format('Y-m') === $check) ? $this->modify($dt) : false;
    }
 
    /**
@@ -2007,9 +2035,7 @@ class Carbon extends DateTime
    */
    public function firstOfQuarter($dayOfWeek = null)
    {
-      $this->month(($this->quarter * 3) - 2);
-
-      return $this->firstOfMonth($dayOfWeek);
+      return $this->month(($this->quarter * 3) - 2)->firstOfMonth($dayOfWeek);
    }
 
    /**
@@ -2024,9 +2050,7 @@ class Carbon extends DateTime
    */
    public function lastOfQuarter($dayOfWeek = null)
    {
-      $this->month(($this->quarter * 3));
-
-      return $this->lastOfMonth($dayOfWeek);
+      return $this->month(($this->quarter * 3))->lastOfMonth($dayOfWeek);
    }
 
    /**
@@ -2042,18 +2066,12 @@ class Carbon extends DateTime
    */
    public function nthOfQuarter($nth, $dayOfWeek)
    {
-      $dt = $this->copy();
-      $dt->month(($this->quarter * 3));
+      $dt = $this->copy()->month(($this->quarter * 3));
       $last_month = $dt->month;
       $year = $dt->year;
-      $dt->firstOfQuarter();
-      $dt->modify('+' . $nth . ' ' . self::$days[$dayOfWeek]);
+      $dt->firstOfQuarter()->modify('+' . $nth . ' ' . self::$days[$dayOfWeek]);
 
-      if ($last_month < $dt->month || $year !== $dt->year) {
-         return false;
-      }
-
-      return $this->modify($dt);
+      return ($last_month < $dt->month || $year !== $dt->year) ? false : $this->modify($dt);
    }
 
    /**
@@ -2068,9 +2086,7 @@ class Carbon extends DateTime
    */
    public function firstOfYear($dayOfWeek = null)
    {
-      $this->month(1);
-
-      return $this->firstOfMonth($dayOfWeek);
+      return $this->month(1)->firstOfMonth($dayOfWeek);
    }
 
    /**
@@ -2085,9 +2101,7 @@ class Carbon extends DateTime
    */
    public function lastOfYear($dayOfWeek = null)
    {
-      $this->month(self::MONTHS_PER_YEAR);
-
-      return $this->lastOfMonth($dayOfWeek);
+      return $this->month(self::MONTHS_PER_YEAR)->lastOfMonth($dayOfWeek);
    }
 
    /**
@@ -2103,16 +2117,9 @@ class Carbon extends DateTime
    */
    public function nthOfYear($nth, $dayOfWeek)
    {
-      $dt = $this->copy();
-      $year = $dt->year;
-      $dt->firstOfYear();
-      $dt->modify('+' . $nth . ' ' . self::$days[$dayOfWeek]);
+      $dt = $this->copy()->firstOfYear()->modify('+' . $nth . ' ' . self::$days[$dayOfWeek]);
 
-      if ($year !== $dt->year) {
-         return false;
-      }
-
-      return $this->modify($dt);
+      return $this->year == $dt->year ? $this->modify($dt) : false;
    }
 
    /**
