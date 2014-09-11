@@ -51,7 +51,7 @@ class SigchildDisabledProcessTest extends AbstractProcessTest
 
     /**
      * @expectedException \Symfony\Component\Process\Exception\RuntimeException
-     * @expectedExceptionMessage his PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
+     * @expectedExceptionMessage This PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
      */
     public function testProcessIsSignaledIfStopped()
     {
@@ -60,7 +60,7 @@ class SigchildDisabledProcessTest extends AbstractProcessTest
 
     /**
      * @expectedException \Symfony\Component\Process\Exception\RuntimeException
-     * @expectedExceptionMessage his PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
+     * @expectedExceptionMessage This PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
      */
     public function testProcessWithTermSignal()
     {
@@ -69,7 +69,7 @@ class SigchildDisabledProcessTest extends AbstractProcessTest
 
     /**
      * @expectedException \Symfony\Component\Process\Exception\RuntimeException
-     * @expectedExceptionMessage his PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
+     * @expectedExceptionMessage This PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
      */
     public function testProcessIsNotSignaled()
     {
@@ -78,7 +78,7 @@ class SigchildDisabledProcessTest extends AbstractProcessTest
 
     /**
      * @expectedException \Symfony\Component\Process\Exception\RuntimeException
-     * @expectedExceptionMessage his PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
+     * @expectedExceptionMessage This PHP has been compiled with --enable-sigchild. Term signal can not be retrieved.
      */
     public function testProcessWithoutTermSignal()
     {
@@ -209,6 +209,11 @@ class SigchildDisabledProcessTest extends AbstractProcessTest
     public function testExitCodeIsAvailableAfterSignal()
     {
         $this->markTestSkipped('Signal is not supported in sigchild environment');
+    }
+
+    public function testRunProcessWithTimeout()
+    {
+        $this->markTestSkipped('Signal (required for timeout) is not supported in sigchild environment');
     }
 
     /**

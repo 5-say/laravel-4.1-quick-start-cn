@@ -1,5 +1,7 @@
 ## Laravel 4 Debugbar
-[![Latest Stable Version](https://poser.pugx.org/barryvdh/laravel-debugbar/version.png)](https://packagist.org/packages/barryvdh/laravel-debugbar) [![Total Downloads](https://poser.pugx.org/barryvdh/laravel-debugbar/d/total.png)](https://packagist.org/packages/barryvdh/laravel-debugbar)
+[![Packagist License](http://img.shields.io/packagist/l/barryvdh/laravel-debugbar.png)](http://choosealicense.com/licenses/mit/)
+[![Latest Stable Version](https://poser.pugx.org/barryvdh/laravel-debugbar/version.png)](https://packagist.org/packages/barryvdh/laravel-debugbar)
+[![Total Downloads](https://poser.pugx.org/barryvdh/laravel-debugbar/d/total.png)](https://packagist.org/packages/barryvdh/laravel-debugbar)
 
 This is a package to integrate [PHP Debug Bar](http://phpdebugbar.com/) with Laravel.
 It includes a ServiceProvider to register the debugbar and attach it to the output. You can publish assets and configure it through Laravel.
@@ -44,16 +46,12 @@ Require this package in your composer.json and run composer update (or run `comp
 After updating composer, add the ServiceProvider to the providers array in app/config/app.php
 
     'Barryvdh\Debugbar\ServiceProvider',
+    
+If you want to use the facade to log messages, add this to your facades in app.php:
 
-You need to publish the assets from this package.
+    'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
-    $ php artisan debugbar:publish
-
-Note: The public assets can change overtime (because of upstream changes), it is recommended to re-publish them after update. You can also add the republish command in composer.json.
-
-    "post-update-cmd": [
-        "php artisan debugbar:publish"
-    ],
+~~You need to publish the assets from this package.~~ Since 1.7, you don't need to publish the assets anymore.
 
 The profiler is enabled by default, if you have app.debug=true. You can override that in the config files.
 You can also set in your config if you want to include/exclude the vendor files also (FontAwesome, Highlight.js and jQuery). If you already use them in your site, set it to false.
@@ -63,11 +61,7 @@ You can also only display the js of css vendors, by setting it to 'js' or 'css'.
 
 You can also disable/enable the loggers you want. You can also use the IoC container to add extra loggers. (`$app['debugbar']->addCollector(new MyDataCollector)`)
 
-If you want to use the facade to log messages, add this to your facades in app.php:
-
-     'Debugbar' => 'Barryvdh\Debugbar\Facade',
-
-You can now add messages using the Facade, using the PSR-3 levels (debug, info, notice, warning, error, critical, alert, emergency):
+You can now add messages using the Facade (when added), using the PSR-3 levels (debug, info, notice, warning, error, critical, alert, emergency):
 
     Debugbar::info($object);
     Debugbar::error("Error!");
@@ -90,6 +84,18 @@ Or log exceptions:
     } catch (Exception $e) {
         Debugbar::addException($e);
     }
+    
+There are also helper functions available for the most common calls:
+
+    // All arguments will be dumped as a debug message
+    debug($var1, $someString, $intValue, $object);
+    
+    start_measure('render','Time for rendering');
+    stop_measure('render');
+    add_measure('now', LARAVEL_START, microtime(true));
+    measure('My long operation', function() {
+        //Do something..
+    });
 
 If you want you can add your own DataCollectors, through the Container or the Facade:
 

@@ -24,7 +24,7 @@ laravel-4.1-quick-start-cn
 
 ---
 
-> laravel 更新至 v4.1.30
+> laravel 更新至 v4.1.31
 
 ---
 
